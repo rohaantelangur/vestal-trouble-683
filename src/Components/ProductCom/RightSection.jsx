@@ -37,6 +37,7 @@ export const RightSection = () => {
                 <option value="BestSellers">Best Sellers</option>
                 <option value="PriceLowToHigh">Price, Low to High</option>
                 <option value="PriceHighToLow">Price, High to Low</option>
+                
               </Select>
             </Stack>
           </Stack>
