@@ -9,11 +9,12 @@ import { deleteitem, getCart } from "../../Redux/CartReducer/action";
 export const SideCartShow = (props) => {
   const { price, ratings, title, quantity,vendor, id } = props;
   const { src } = props.images[0];
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(quantity);
+  const [abovethreeOrder,setAbovethreeOrder]=useState(false)
   const dispatch = useDispatch();
 
 
-  const handdleUpdata = async () => {
+  const handdleUpdate = async (count) => {
     await axios
       .patch(`http://localhost:8080/addtocart/${id}`, {
         quantity: count,
@@ -21,6 +22,36 @@ export const SideCartShow = (props) => {
       })
       .then(() => getCart(dispatch));
   };
+
+const handdleIncrement=(value)=>
+{
+  if(value==1&&count<3)
+  {
+    setCount(count+value)
+   
+  }
+  else if(value===-1&&count>1)
+  {
+    setCount(count+value)
+  }
+  
+}
+useEffect(()=>
+{
+if(count==3)
+{
+  setAbovethreeOrder(true)
+}
+else
+{
+  setAbovethreeOrder(false)
+}
+},[count])
+useEffect(()=>
+{
+  handdleUpdate(count)
+},[count])
+// console.log(abovethreeOrder)
   const handlleDelete = async () => {
     console.log("hai delete");
     console.log(id);
@@ -63,6 +94,9 @@ export const SideCartShow = (props) => {
               {(price / 100).toLocaleString("hi-IN")}.00
             </Text>
           </Box>
+          <Box>
+            {abovethreeOrder?<Text>Limit: 3 Per Order</Text>:""}
+          </Box>
         </Box>
         <Box
           display={"block"}
@@ -88,7 +122,7 @@ export const SideCartShow = (props) => {
             _hover={{
               cursor: "pointer"
             }}
-            onClick={() => handdleUpdata(setCount(count - 1))}
+            onClick={()=>handdleIncrement(-1)}
           >
             -
           </Button>
@@ -102,7 +136,7 @@ export const SideCartShow = (props) => {
           border="1px black solid"
           w={"40px"}
             h="30px"
-            onClick={() => handdleUpdata(setCount(count + 1))}
+            onClick={()=>handdleIncrement(1)}
           
             _hover={{
               cursor: "pointer"

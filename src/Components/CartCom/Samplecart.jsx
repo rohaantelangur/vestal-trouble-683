@@ -27,6 +27,22 @@ import { getCart } from '../../Redux/CartReducer/action';
 export const Samplecart = () => {
     const navigate = useNavigate();
     const AddtoCart = useSelector((state) => state.Cartreducer.AddtoCart);
+
+    const uniqueIds = [];
+
+const unique = AddtoCart.filter(element => {
+  const isDuplicate = uniqueIds.includes(element.id);
+
+  if (!isDuplicate) {
+    uniqueIds.push(element.id);
+
+    return true;
+  }
+
+  return false;
+});
+//console.log(unique)
+
     const { isOpen, onOpen, onClose } = useDisclosure();
     const handleClick = (newSize) => {
       onOpen();
@@ -41,7 +57,7 @@ export const Samplecart = () => {
   
   let totalPrice=0
   return (
-    <Box  bgColor="#f8f8f8" fontFamily="Montserrat Semi Bold">
+    <Box   fontFamily="Montserrat Semi Bold">
     <Button  bgColor="#f8f8f8" onClick={() => handleClick("md")} key={"md"} m={4}>
       YOUR BAG
     </Button>
@@ -53,11 +69,11 @@ export const Samplecart = () => {
         <Box borderBottom={"0.1px solid gray"}></Box>
         <DrawerBody bgColor="#f8f8f8"  >
           <Box mt="2">
-            <Text color="#61789c">FREE RETURNS ON ALL ORDERS</Text>
+            <Text color="#61789c" fontFamily="Montserrat Semi Bold, sans-serif" fontWeight="600" fontSize={"11"}>FREE RETURNS ON ALL ORDERS</Text>
           </Box>
           <Box mt="2">
               {
-                  AddtoCart.map((item)=>
+                  unique.map((item)=>
                   {
                     totalPrice+=item.priceMax
                       return  <SideCartShow key={item.id} {...item} />
