@@ -11,6 +11,7 @@ import {
     useDisclosure,
     Button,
     Box,
+    Text,
     Icon,
     Heading,
   } from "@chakra-ui/react";
@@ -40,18 +41,21 @@ export const Samplecart = () => {
   
   let totalPrice=0
   return (
-    <Box>
-    <Button bg={"white"} onClick={() => handleClick("md")} key={"md"} m={4}>
+    <Box  bgColor="#f8f8f8" fontFamily="Montserrat Semi Bold">
+    <Button  bgColor="#f8f8f8" onClick={() => handleClick("md")} key={"md"} m={4}>
       YOUR BAG
     </Button>
-    <Drawer onClose={onClose} isOpen={isOpen} size={"md"}>
+    <Drawer onClose={onClose} isOpen={isOpen} size={"md"} bgColor="#f8f8f8">
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
         <DrawerHeader display={"flex"}><Heading ml="3">{AddtoCart.length} YOUR BAG</Heading> </DrawerHeader>
-        <Box borderBottom={"1px solid gray"}></Box>
-        <DrawerBody>
-          <Box>
+        <Box borderBottom={"0.1px solid gray"}></Box>
+        <DrawerBody bgColor="#f8f8f8"  >
+          <Box mt="2">
+            <Text color="#61789c">FREE RETURNS ON ALL ORDERS</Text>
+          </Box>
+          <Box mt="2">
               {
                   AddtoCart.map((item)=>
                   {
@@ -62,12 +66,12 @@ export const Samplecart = () => {
          
           </Box>
           <Button
-          rounded={"60px"}
+        
           w={"80%"}
           mt={8}
           size={"md"}
           py={"6"}
-          bg="#3c07ff"
+          bg="#12284c"
           fontFamily={"Roboto, sans-serif"}
           color={"white"}
           textTransform={"uppercase"}
@@ -77,7 +81,7 @@ export const Samplecart = () => {
           }}
           
           onClick= {()=> navigate("/mainCartBag")} >
-          VIEW BAG {(totalPrice).toLocaleString("hi-IN")}
+          VIEW BAG | ₹. {(totalPrice).toLocaleString("hi-IN")}
         </Button>
          
         </DrawerBody>

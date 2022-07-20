@@ -12,7 +12,7 @@ export const SideCartShow = (props) => {
   const [count, setCount] = useState(1);
   const dispatch = useDispatch();
 
-  console.log(src);
+
   const handdleUpdata = async () => {
     await axios
       .patch(`http://localhost:8080/addtocart/${id}`, {
@@ -36,6 +36,7 @@ export const SideCartShow = (props) => {
         flexWrap={"wrap"}
         gap="20px"
         justifyContent={"space-around"}
+        
       >
         <Box w={"120px"} h="150px">
           <Image src={src} />
@@ -78,20 +79,34 @@ export const SideCartShow = (props) => {
           justifyContent="space-around"
           textAlign="center">
           <Button
-            
+          bgColor="#f8f8f8"
+          fontSize={"20px"}
+          borderRadius='0px'
+           border="1px black solid"
+           w={"40px"}
             h="30px"
+            _hover={{
+              cursor: "pointer"
+            }}
             onClick={() => handdleUpdata(setCount(count - 1))}
           >
             -
           </Button>
-          <Button h="30px" w="10px" m={"auto"}>
+          <Box bgColor="#ffffff" border="1px black solid" h="30px" w="40px" m={"auto"}    >
             {quantity}
-          </Button>
+          </Box>
           <Button
-           
+            borderRadius='0px'
+            bgColor="#f8f8f8"
+            fontSize={"20px"}
+          border="1px black solid"
+          w={"40px"}
             h="30px"
             onClick={() => handdleUpdata(setCount(count + 1))}
-          >
+          
+            _hover={{
+              cursor: "pointer"
+            }}>
             +
           </Button>
           </Box>

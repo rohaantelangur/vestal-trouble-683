@@ -49,7 +49,7 @@ import { ADD_TOCART_FAILURE, ADD_TOCART_REQUEST, ADD_TOCART_SUCCESS, DELETE_FROM
       };
       export const deleteitem = async (dispatch, id) => {
         console.log(id);
-        let res = await axios.delete(`https://headphone-zone-api.herokuapp.com/addtocart/${id}`);
+        let res = await axios.delete(`http://localhost:8080/addtocart/${id}`);
       
         dispatch({
           type: DELETE_FROM_CART,
