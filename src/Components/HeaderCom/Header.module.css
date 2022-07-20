@@ -1,0 +1,34 @@
+.logo{
+    width: 18rem;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.mainDiv{
+    border: 2px solid black;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.icons{
+    border: 2px solid red;
+    height: 40px;
+}
+
+.navTitle{
+    border: 2px solid red;
+    padding: 16px;
+    font-size: 14px;
+    color: grey;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+
