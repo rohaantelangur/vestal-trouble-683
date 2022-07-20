@@ -20,15 +20,68 @@
     border: 2px solid red;
     padding: 16px;
     font-size: 14px;
-    color: grey;
+    color: #486687 ;
+    letter-spacing: 1px;
 }
 
 nav {
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
     padding-left: 24px;
     padding-right: 24px;
 }
 
+h3{
+    padding-bottom: 20px;
+    /* border: 2px solid green; */
 
+}
+
+h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+    color: #5f7c9d ;
+}
+
+.menu1{
+    border: 2px solid #008000;
+    /* width: 100%; */
+    /* display: none; */
+    /* margin-top: 30px; */
+}
+
+.shop:hover ~ .menu1{
+   display: block;
+}
+
+
+
+.menu1 li{
+    list-style: none;
+    padding: 12px;
+}
+
+.menu1_sections{
+    display: flex;
+    
+}
+
+.menu1_ul{
+    border: 2px solid purple;
+    margin-right: 4rem;
+    /* padding: 5px; */
+    width: 50%;
+}
+
+.headings{
+    display: flex;
+    justify-content: space-around;
+}
+
+.headings > div {
+    margin-top: 50px;
+    border: 4px solid pink;
+    width: 80%;
+}
 
