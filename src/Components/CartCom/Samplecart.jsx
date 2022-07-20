@@ -42,19 +42,20 @@ export const Samplecart = () => {
   return (
     <Box>
     <Button bg={"white"} onClick={() => handleClick("md")} key={"md"} m={4}>
-      Cart
+      YOUR BAG
     </Button>
     <Drawer onClose={onClose} isOpen={isOpen} size={"md"}>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader display={"flex"}><Heading ml="3">{AddtoCart.length} Items</Heading> </DrawerHeader>
+        <DrawerHeader display={"flex"}><Heading ml="3">{AddtoCart.length} YOUR BAG</Heading> </DrawerHeader>
+        <Box borderBottom={"1px solid gray"}></Box>
         <DrawerBody>
           <Box>
               {
                   AddtoCart.map((item)=>
                   {
-                    totalPrice+=item.totalPrice
+                    totalPrice+=item.priceMax
                       return  <SideCartShow key={item.id} {...item} />
                   })
               }
@@ -75,8 +76,8 @@ export const Samplecart = () => {
             boxShadow: "lg",
           }}
           
-          onClick= {()=> navigate("/ChkeckOut")} >
-          Check Out {(totalPrice).toLocaleString("hi-IN")}
+          onClick= {()=> navigate("/mainCartBag")} >
+          VIEW BAG {(totalPrice).toLocaleString("hi-IN")}
         </Button>
          
         </DrawerBody>

@@ -4,9 +4,9 @@ import { Samplecart } from '../CartCom/Samplecart'
 const Header = () => {
   return (
     <Box>
-    <Button>
+ 
       <Samplecart />
-    </Button>
+ 
     </Box>
   )
 }

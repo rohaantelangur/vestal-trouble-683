@@ -35,7 +35,7 @@ import { ADD_TOCART_FAILURE, ADD_TOCART_REQUEST, ADD_TOCART_SUCCESS, DELETE_FROM
           type: GET_CART_REQUEST
         });
         try {
-          let res = await axios.get("https://headphone-zone-api.herokuapp.com/addtocart");
+          let res = await axios.get("http://localhost:8080/addtocart");
           let data = await res.data;
           dispatch({
             type: GET_CART_SUCCESS,
