@@ -1,4 +1,7 @@
-import React from "react";
+
+
+import React from 'react';
+
 import style from "./Header.module.css";
 
 const Header = () => {
@@ -519,7 +522,11 @@ const Header = () => {
         </header>
       </div>
     </div>
+
   );
 };
+
+  
+
 
 export default Header;
