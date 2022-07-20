@@ -1,4 +1,4 @@
-import { Box, Button, Image, SlideFade, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Image, SlideFade, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
@@ -146,13 +146,17 @@ useEffect(()=>
           </Box>
          
 <Box>
-<DeleteIcon
-            onClick={handlleDelete}
+{/* <DeleteIcon
+           
             ml="2"
             h={4}
             w={4}
             alignSelf={"center"}
-          />
+          /> */}
+          <Text    _hover={{
+              cursor: "pointer"
+              
+            }}  onClick={handlleDelete} >Remove</Text>
 </Box>
          
         </Box>

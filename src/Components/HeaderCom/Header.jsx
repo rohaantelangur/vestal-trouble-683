@@ -5,8 +5,7 @@ const Header = () => {
   return (
     <Box>
  
-      <Samplecart />
- 
+   
     </Box>
   )
 }

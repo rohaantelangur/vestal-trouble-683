@@ -22,6 +22,7 @@ import {
   import { useNavigate } from "react-router-dom";
 import { SideCartShow } from './SideCartShow';
 import { getCart } from '../../Redux/CartReducer/action';
+import { BagIcon } from './BagIcon';
 
 
 export const Samplecart = () => {
@@ -59,7 +60,7 @@ const unique = AddtoCart.filter(element => {
   return (
     <Box   fontFamily="Montserrat Semi Bold">
     <Button  bgColor="#f8f8f8" onClick={() => handleClick("md")} key={"md"} m={4}>
-      YOUR BAG
+     <BagIcon />  YOUR BAG
     </Button>
     <Drawer onClose={onClose} isOpen={isOpen} size={"md"} bgColor="#f8f8f8">
       <DrawerOverlay />
