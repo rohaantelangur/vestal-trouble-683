@@ -19,7 +19,7 @@ export const RightSection = () => {
     if (direction === "Prev") {
       setcurretpage(curretpage - 1);
     } else if (direction === "Next") {
-      setcurretpage(curretpage + 1);
+      setcurretpage(curretpage +  1);
     }
   };
 
