@@ -27,6 +27,7 @@ import { useReducer, useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import style from "./Signup.module.css";
 import { Link as RouterLink } from "react-router-dom";
+import { saveData } from "../../utils/localStorage";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -74,7 +75,7 @@ export function Signup() {
   console.log("state:", state);
 
   const signupHandler = () => {
-    
+    saveData("user Details", state)
   }
 
   return (
