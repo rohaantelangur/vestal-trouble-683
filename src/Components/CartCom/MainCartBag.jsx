@@ -2,6 +2,7 @@ import { WarningIcon } from "@chakra-ui/icons";
 import { Box, Checkbox, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import {  useSelector } from "react-redux";
+import { AdditionalOffering } from "./AdditionalOffering";
 import { CartShowList } from "./CartShowList";
 import { SideCartShow } from "./SideCartShow";
 export const MainCartBag = () => {
@@ -142,6 +143,7 @@ let totalPrice=0
          
           </Box>
       </Box>
+      <AdditionalOffering />
     </Box>
   );
 };

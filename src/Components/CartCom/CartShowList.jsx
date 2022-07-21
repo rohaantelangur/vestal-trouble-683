@@ -85,7 +85,7 @@ export const CartShowList = (props) => {
         <Box
           display={"block"}
           h="30px"
-          mt="10px"
+          mt="1px"
           w={"100px"}
           justifyContent="space-around"
           textAlign="center"
