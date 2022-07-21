@@ -64,16 +64,16 @@ export function Login() {
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
-      border={"2px solid black"}
+      // bg={useColorModeValue("gray.50", "gray.800")}
+      // border={"2px solid black"}
     >
       <Stack
         spacing={8}
         mx={"auto"}
         maxW={"lg"}
-        py={12}
-        px={20}
-        border={"2px solid black"}
+        // py={12}
+        // px={20}
+        // border={"2px solid black"}
       >
         <Stack align={"center"}>
           <Heading fontSize={"2rem"} color={"#12284c"}>
@@ -86,8 +86,10 @@ export function Login() {
         <Box
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
+          // boxShadow={"lg"}
           p={8}
+          width={"700px"}
+          margin="auto"
         >
           <Stack spacing={4}>
             <FormControl id="email">
@@ -95,6 +97,7 @@ export function Login() {
               <Input
                 type="email"
                 placeholder="Email"
+                // width={"60%"}
                 isRequired
                 value={state.email}
                 onChange={(e) =>
