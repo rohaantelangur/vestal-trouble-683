@@ -4,7 +4,8 @@ import React from "react";
 import {  useSelector } from "react-redux";
 import { AdditionalOffering } from "./AdditionalOffering";
 import { CartShowList } from "./CartShowList";
-import { SideCartShow } from "./SideCartShow";
+import { SlidersPrivew } from "./SlidersPrivew";
+
 export const MainCartBag = () => {
   const AddtoCart = useSelector((state) => state.Cartreducer.AddtoCart);
 
@@ -143,7 +144,8 @@ let totalPrice=0
          
           </Box>
       </Box>
-      <AdditionalOffering />
+      <AdditionalOffering totalPrice={totalPrice}/>
+      <SlidersPrivew />
     </Box>
   );
 };
