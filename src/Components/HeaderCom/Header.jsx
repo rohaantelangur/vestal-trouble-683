@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Samplecart } from "../CartCom/Samplecart";
 
 import style from "./Header.module.css";
 
@@ -8,6 +9,7 @@ const Header = () => {
     <div className={style.mainDiv}>
       <div className={style.icons}>
       <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+      <Samplecart />
       </div>
       <img
         src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
