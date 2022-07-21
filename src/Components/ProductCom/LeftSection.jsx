@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Accordion,
   AccordionButton,
@@ -15,8 +15,41 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, SearchIcon } from "@chakra-ui/icons";
 import { Filter } from "./FillterData";
+import { useSearchParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
 
-export const LeftSection = () => {
+export const LeftSection = (category) => {
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.getAll("category") || []
+  );
+  const dispatch = useDispatch();
+
+
+
+  const handleAddFilter = (category) =>{
+    console.log(category);
+    let newSelectedCategory = [...selectedCategory];
+
+    if (selectedCategory.includes(category)) {
+      newSelectedCategory.splice(newSelectedCategory.indexOf(category), 1);
+    } else {
+      newSelectedCategory.push(category);
+    }
+
+    setSelectedCategory(newSelectedCategory);
+    dispatch({type:ADD_FILLTER, payload:newSelectedCategory})
+    console.log(newSelectedCategory);
+  }
+
+  useEffect(() => {
+    if (selectedCategory) {
+      setSearchParams({ category: selectedCategory });
+    }
+  }, [selectedCategory, setSearchParams]);
   return (
     <Box mt={5} w="25%">
       <Heading size="sm" mt={5} >
@@ -56,8 +89,8 @@ export const LeftSection = () => {
       <Heading size="sm" mb={2}>FILTER MAKEUP BY</Heading>
 
       <Accordion allowToggle>
-        {Filter.map((obj) => (
-          <AccordionItem>
+        {Filter.map((obj,index) => (
+          <AccordionItem key={index}>
             <h2>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
@@ -87,7 +120,11 @@ export const LeftSection = () => {
                 }}
               >
                 {obj.Sub.map((item, index) => (
-                  <Checkbox colorScheme="gray" size="lg" key={index}>
+                  <Checkbox
+                  defaultChecked={selectedCategory.includes(item)? true : false} 
+                  colorScheme="gray" size="lg" key={index} 
+                  onChange={() => handleAddFilter(item)}
+                  >
                     {item}
                   </Checkbox>
                 ))}

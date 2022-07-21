@@ -2,9 +2,14 @@
 import { applyMiddleware, combineReducers, compose, legacy_createStore } from "redux";
 import thunk from 'redux-thunk'
 import { Cartreducer } from "./CartReducer/CartReducer";
+import { FillterReducer } from "./FillterReducer/FillterReducer";
+import { WishListReducer } from "./WishListReducer/WishListReducer" 
+
 
 const rootReduser=combineReducers({
-    Cartreducer:Cartreducer
+    Cartreducer:Cartreducer,
+    WishList:WishListReducer,
+    Fillters:FillterReducer,
   })
 
 const composeEnhaneser=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})|| compose
