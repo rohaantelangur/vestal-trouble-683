@@ -5,15 +5,19 @@ import Header from "./Components/HeaderCom/Header";
 import Footer from "./Components/FooterCom/Footer";
 import Products from "./Page/Products";
 
+import { MainCartBag } from "./Components/CartCom/MainCartBag";
+
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/mainCartBag" element={<MainCartBag />} />
       </Routes>
-      {/* <Footer /> */}
+      
     </>
   );
 }
