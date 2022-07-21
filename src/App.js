@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Page/Home";
 import Header from "./Components/HeaderCom/Header";
 import Footer from "./Components/FooterCom/Footer";
+import Products from "./Page/Products";
 
 import { MainCartBag } from "./Components/CartCom/MainCartBag";
 
@@ -10,12 +11,13 @@ function App() {
   return (
     <>
       <Header />
-      {/* <Navbar /> */}
+      
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/mainCartBag" element={<MainCartBag />} />
       </Routes>
-      <Footer />
+      
     </>
   );
 }
