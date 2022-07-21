@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Grid,
@@ -7,21 +7,49 @@ import {
   Select,
   Stack,
   Switch,
+  Tag,
+  TagCloseButton,
+  TagLabel,
   Text,
 } from "@chakra-ui/react";
 import { Pagination } from "./Pagination";
 import { ProductCard } from "./ProductCard";
+import axios from "axios"
+import { useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const RightSection = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.getAll("category") || []
+  );
+
+  const Fillter = useSelector((store)=>store.Fillters.Fillter)
+  console.log(Fillter);
   const [curretpage, setcurretpage] = useState(1);
+  const [products, setproducts] = useState([])
 
   const onPageChange = (direction) => {
     if (direction === "Prev") {
       setcurretpage(curretpage - 1);
     } else if (direction === "Next") {
-      setcurretpage(curretpage +  1);
+      setcurretpage(curretpage + 1);
     }
   };
+
+  const FetchDataFromServer = () =>{
+    axios.get(`http://localhost:8080/skincare?_page=${curretpage}&_limit=50`).then((res)=>{
+      console.log(res.data);
+      setproducts(res.data)
+    }).catch((err)=>{
+      console.log(err);
+    })
+  }
+  useEffect(() => {
+    FetchDataFromServer()
+  }, [curretpage])
+  
 
   return (
     <Box w="72%">
@@ -31,13 +59,12 @@ export const RightSection = () => {
           <Stack direction={"row"} align="center" pt={"5"}>
             <Heading size={"md"}>SORT BY</Heading>
             <Stack spacing={3}>
-              <Select variant="outline" placeholder="Outline">
+              <Select variant="outline" >
                 <option value="Featured">Featured</option>
                 <option value="NewArrivals">New Arrivals</option>
                 <option value="BestSellers">Best Sellers</option>
                 <option value="PriceLowToHigh">Price, Low to High</option>
-                <option value="PriceHighToLow">Price, High to Low</option>
-                
+                <option value="PriceHighToLow">Price, High to Low</option>    
               </Select>
             </Stack>
           </Stack>
@@ -45,10 +72,10 @@ export const RightSection = () => {
       </Box>
 
       <Stack direction="row" justifyContent="space-between" mt="2" mb={5}>
-        <Heading size={"sm"}>0 FILTERS APPLIED</Heading>
+        <Heading size={"sm"}>{Fillter.length} FILTERS APPLIED</Heading>
         <Stack direction="row" align="center" gap="10px">
           <Text fontSize="sm" color={"#888c92"}>
-            Select One to narrow results
+            Show out of stock items
           </Text>
           <Switch colorScheme="gray" />
           <Text fontSize="sm" color={"#888c92"}>
@@ -56,13 +83,27 @@ export const RightSection = () => {
           </Text>
         </Stack>
       </Stack>
-      <Grid templateColumns="repeat(4, 1fr)" gap={2} >
-        <GridItem w="100%" h="350" bg="#e7e7e7">
-            <ProductCard/>
+      <Box my={2}>
+        {Fillter?.map((item, index)=>(
+         <Tag
+         m={2}
+         size={"md"}
+         key={index}
+         borderRadius='full'
+         variant='outline'
+         colorScheme='gray'
+       >
+         <TagLabel>{item}</TagLabel>
+         <TagCloseButton />
+       </Tag>   
+        ))}
+      </Box>
+      <Grid templateColumns="repeat(4, 1fr)" gap={5} >
+        {products?.map((item, index)=>(
+        <GridItem w="100%" h="350" key={index}>
+            <ProductCard item={item}/>
         </GridItem>
-        <GridItem w="100%" h="300" bg="blue.500" />
-        <GridItem w="100%" h="300" bg="blue.500" />
-        <GridItem w="100%" h="300" bg="blue.500" />
+          ))}
       </Grid>
 
       <Box w={"70%"} m={"20px auto"}>
