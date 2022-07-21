@@ -16,10 +16,10 @@ export const RightSection = () => {
   const [curretpage, setcurretpage] = useState(1);
 
   const onPageChange = (direction) => {
-    if (direction == "Prev") {
+    if (direction === "Prev") {
       setcurretpage(curretpage - 1);
-    } else if (direction == "Next") {
-      setcurretpage(curretpage + 1);
+    } else if (direction === "Next") {
+      setcurretpage(curretpage +  1);
     }
   };
 
