@@ -64,7 +64,21 @@ const unique = AddtoCart.filter(element => {
            variant:"ghost",
          
           }}>
-     <BagIcon />  BAG
+            
+     <BagIcon  />
+        
+     <Box
+        pos={"absolute"}
+        top="4"
+        left={"24px"}
+        
+        textAlign="center"
+      >
+        <Text color={"white"} fontSize="12px" >
+        {AddtoCart.length}
+        </Text>
+      </Box>
+          BAG
     </Button>
     <Drawer onClose={onClose} isOpen={isOpen} size={"md"} bgColor="#f8f8f8">
       <DrawerOverlay />

@@ -1,7 +1,10 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 
 export const MainCartBag = () => {
   return (
-    <div>MainCartBag</div>
+    <Box>
+      
+    </Box>
   )
 }
