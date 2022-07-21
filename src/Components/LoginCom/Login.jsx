@@ -13,7 +13,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import style from "./Login.module.css"
+import style from "./Login.module.css";
 
 export function Login() {
   return (
@@ -52,7 +52,7 @@ export function Login() {
                 align={'start'}
                 justify={'space-between'}>
                 <Checkbox>Remember me</Checkbox>
-                <Link color={'blue.400'}>Forgot password?</Link>
+                {/* <Link color={'blue.400'}>Forgot password?</Link> */}
               </Stack>
               <Button
                 bg={'#12284c'}
