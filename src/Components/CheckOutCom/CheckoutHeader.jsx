@@ -4,6 +4,8 @@ import { Box, Heading, Image, Stack, Text,  Breadcrumb,
     BreadcrumbLink,
     BreadcrumbSeparator, } from '@chakra-ui/react'
     import { ChevronRightIcon } from '@chakra-ui/icons'
+import { Link } from 'react-router-dom'
+import { PaypalPayment } from './PaypalPayment'
 export const CheckoutHeader = () => {
   return (
     <Box>
@@ -11,20 +13,26 @@ export const CheckoutHeader = () => {
         
         <Image width={"60%"} src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/blm-checkout-logo.png?110142"/>
         </Stack> 
-        <Box>
+        <Box mt={5} mb={5} ml="10%" >
         <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
   <BreadcrumbItem>
-    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
-  </BreadcrumbItem>
-
-  <BreadcrumbItem>
-    <BreadcrumbLink href='#'>About</BreadcrumbLink>
+    <BreadcrumbLink as={Link} to='/mainCartBag'>Cart</BreadcrumbLink>
   </BreadcrumbItem>
 
   <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
+    <BreadcrumbLink as={Link} to='#'>Customer information</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem >
+    <BreadcrumbLink as={Link} to='#'>Shipping method</BreadcrumbLink>
+  </BreadcrumbItem>
+  <BreadcrumbItem >
+    <BreadcrumbLink as={Link} to='#'>Payment method</BreadcrumbLink>
   </BreadcrumbItem>
 </Breadcrumb>
+        </Box>
+        <Box>
+          <PaypalPayment />
         </Box>
     </Box>
   )

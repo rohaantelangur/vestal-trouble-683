@@ -165,13 +165,14 @@ console.log(value);
                   onChange={handleChange}
                 />
                 <Input
+                borderRadius={"0px"}
                   type="submit"
                   placeholder="Phone"
                   size="lg"
                   mt={"10px"}
-                  value="Continue to payment method"
+                  value="CONTINUE TO SHIPPING METHOD"
                   ml={"37%"}
-                  bg="#9200ff"
+                  bg="#12284c"
                   color={"white"}
                   width={"60%"}
                   _hover={{
@@ -218,9 +219,16 @@ console.log(value);
               })}
             </Box>
             <Box bg="gray" h={"1px"} width={"80%"}></Box>
-            <Box display={"flex"} p="2" mt="10px" gap={"10px"}>
-              <Input placeholder="Apply Coupen Code" size="lg" width={"70%"} />
-              <Button>Apply</Button>
+            <Box display={"flex"} p="2" mt="10px" mr={"10%"} gap={"10px"}>
+              <Input placeholder="Apply Coupen Code" size="lg" width={"60%"} />
+              <Button  w={"30%"}
+     
+          size={"lg"}
+         borderRadius="0px"
+          bg="#12284c"
+          fontFamily={"Roboto, sans-serif"}
+          color={"white"}
+          >Apply</Button>
             </Box>
             <Box bg="gray" h={"1px"} mt="10px" width={"80%"}></Box>
             <Box color="gray" mt="10px" width={"80%"}>
