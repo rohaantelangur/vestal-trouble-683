@@ -1,75 +1,17 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import {slideone} from "./sliderdata.js/sliderData"
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./style.css";
-let sliderData=[
-    {
-        id:1,
-        image:"https://cdn.shopify.com/s/files/1/0283/0185/2747/products/global_images-635494263008-1_200x.jpg",
-        title:"M-61",
-        brand:"PowerGlow® Peel",
-        price:"$118"
-    },
-    {
-        id:2,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
-    {
-        id:3,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
-    {
-        id:4,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
-    {
-        id:5,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
-    {
-        id:6,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
-    {
-        id:7,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
-    {
-        id:8,
-        image:"",
-        title:"",
-        brand:"",
-        price:""
-    },
 
-
-]
 
 export const SlidersPrivew = () => {
+    console.log(slideone)
   return (
     <Box>
         <Swiper
