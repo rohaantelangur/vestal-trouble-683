@@ -1,3 +1,4 @@
+import axios from "axios"
 import { GET_PRODUCTS_ERROR, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS } from "./actionTypes"
 
 export const getProductsRequest = () => ({
@@ -15,7 +16,7 @@ export const getProductsError = () => ({
 
 export const getProducts = (params) => dispatch => {
     dispatch(getProductsRequest())
-    axios.get("/products", params)
+    axios.get("/skincare", params)
     .then((res) => dispatch(getProductsSuccess(res.data)))
     .catch((err) => dispatch(getProductsError(err))) 
 }
