@@ -66,6 +66,12 @@ const Header = () => {
                       <li>WELLNESS</li>
                       <li>FREE GIFTS</li>
                     </ul>
+                  </div>
+      <div className={style.icons}>
+
+      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+ 
+      {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> */}
 
                     <ul className={style.menu1_ul}>
                       <h4 style={{ color: "blue", fontWeight: "600" }}>

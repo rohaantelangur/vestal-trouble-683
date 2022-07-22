@@ -1,27 +1,25 @@
 import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import {sliderData} from "./sliderdata"
+import {shopTopSellers} from "./sliderdata"
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
-// import {slideone} from "./sliderdata.js/sliderData"
 
 // Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./styles.css";
 import { Pagination, Navigation } from "swiper";
 
 
-export const SlidersPrivew = () => {
-    // console.log(slideone)
+export const ShopTopSellers = () => {
     
   return (
     <Box h="350px" mt="20" mb="10" fontFamily={`"Montserrat Regular",sans-serif`} color="#12284C">
-      <Stack ml={"40%"}>
+      <Stack ml={"30%"}>
 
-      <Heading size={"md"}letterSpacing="2px"  fontSize="24px" fontWeight={400} p="10">SIMILAR PRODUCTS</Heading>
+      <Heading size={"md"}letterSpacing="2px"  fontSize="24px" fontWeight={400} p="10">BEAUTY LOVERS LIKE YOU ALSO BOUGHT</Heading>
       </Stack >
 
        <Swiper
@@ -37,7 +35,7 @@ export const SlidersPrivew = () => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {sliderData.map((item)=>
+        {shopTopSellers.map((item)=>
         {
           return  <SwiperSlide>
           <Stack fontSize={"14px"}>
@@ -62,3 +60,4 @@ export const SlidersPrivew = () => {
     </Box>
   )
 }
+

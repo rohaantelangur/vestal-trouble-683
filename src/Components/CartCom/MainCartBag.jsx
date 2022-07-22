@@ -4,6 +4,7 @@ import React from "react";
 import {  useSelector } from "react-redux";
 import { AdditionalOffering } from "./AdditionalOffering";
 import { CartShowList } from "./CartShowList";
+import { ShopTopSellers } from "./ShopTopSellers";
 import { SlidersPrivew } from "./SlidersPrivew";
 
 export const MainCartBag = () => {
@@ -25,6 +26,7 @@ return false;
 });
 let totalPrice=0
   return (
+    <Box>
     <Box width={"80%"} m="auto">
       <Box pt="10" pb="10" fontFamily={`"Montserrat Regular",sans-serif`}>
         <Heading
@@ -144,8 +146,14 @@ let totalPrice=0
          
           </Box>
       </Box>
+
       <AdditionalOffering totalPrice={totalPrice}/>
+   </Box>
+   <Box>
       <SlidersPrivew />
+      <ShopTopSellers />
+      </Box>
     </Box>
+
   );
 };
