@@ -1,41 +1,47 @@
 .logo{
     width: 12rem;
     margin: auto;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .mainDiv{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 90%;
     margin: auto;
     margin-top: 10px;
 }
 
 .icons{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     height: 40px;
 }
 
 #headericons{
   display: flex;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   justify-content: space-between;
 }
 
 .icon{
   display: flex;
-  border: 2px solid rgb(223, 143, 156);
+  /* border: 2px solid rgb(223, 143, 156); */
   justify-content: space-between;
   width: 180px;
   font-size: 25px;
   align-items: center;
 }
 .navTitle{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding: 16px;
-    font-size: 14px;
-    color: #486687 ;
+    font-size: 18px;
+    color: #3e6b9b ;
     letter-spacing: 1px;
+}
+
+.nav_head:hover {
+  border-bottom: 1px solid #12284c;
+  color: #12284c;
+  cursor: pointer;
 }
 
 nav {
@@ -64,7 +70,7 @@ h3:hover {
   }
 
 .menu_experiment{
-    border: 2px solid #008000;
+    /* border: 2px solid #008000; */
     position: relative;
     /* width: 100%; */
     /* display: none; */
@@ -88,7 +94,7 @@ h3:hover {
 }
 
 .menu1_ul{
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     margin-right: 3rem;
     /* padding: 5px; */
     width: 160px;
@@ -107,7 +113,7 @@ h3:hover {
 
 .headings > div {
     margin-top: 50px;
-    border: 4px solid pink;
+    /* border: 4px solid pink; */
     width: 900px;
     /* height: 500px; */
 }
@@ -119,7 +125,7 @@ h3:hover {
 
 .header {
     /* width: 100%; */
-    border: 2px solid green;
+    /* border: 2px solid green; */
     /* min-height: 100px;   */
     position: relative;
     /* font-family: HCoGothamSSmSemiBold, Arial, Sans-Serif; */
@@ -145,6 +151,56 @@ h3:hover {
 
 .drop_one{
     margin-top: 20px;
+    
+  }
+
+  .drop_one:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .drop_two:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .drop_three:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .drop_four:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .drop_five:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .drop_six:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .drop_seven:hover{
+    border-bottom: 2px solid #12284c;
+    color: #12284c;
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   .menu_one,
@@ -225,4 +281,10 @@ h3:hover {
     padding: 10px;
     color: #1d1d1d;
 
+  }
+
+  .subHead{
+    color: #12284c;
+     font-weight: 600;
+     font-size: 16px;
   }
