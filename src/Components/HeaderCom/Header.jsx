@@ -22,7 +22,7 @@ const Header = () => {
         </div>
 
       <div className={style.icons}>
-      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+      {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> */}
       <Samplecart />
 
       </div>
