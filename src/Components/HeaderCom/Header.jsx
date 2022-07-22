@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 
@@ -19,6 +20,7 @@ const Header = () => {
           <WishlistIcon style={{marginRight: "10px", border: "1px solid black"}} />
           <SearchIcon />
           <UserIcon />
+          
         </div>
 
       <div className={style.icons}>
