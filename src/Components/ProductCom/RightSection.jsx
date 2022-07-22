@@ -15,20 +15,14 @@ import {
 import { Pagination } from "./Pagination";
 import { ProductCard } from "./ProductCard";
 import axios from "axios"
-import { useSearchParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
 
 export const RightSection = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const [selectedCategory, setSelectedCategory] = useState(
-    searchParams.getAll("category") || []
-  );
-
   const Fillter = useSelector((store)=>store.Fillters.Fillter)
-  console.log(Fillter);
   const [curretpage, setcurretpage] = useState(1);
   const [products, setproducts] = useState([])
+  const dispatch = useDispatch();
 
   const onPageChange = (direction) => {
     if (direction === "Prev") {
@@ -39,6 +33,15 @@ export const RightSection = () => {
       setcurretpage(direction);
     }
   };
+
+  const RemoveTag=(category)=>{
+    let newFillter = [...Fillter];
+    if (Fillter.includes(category)) {
+      newFillter.splice(newFillter.indexOf(category), 1);
+    }
+    dispatch({type:ADD_FILLTER, payload:newFillter})
+    console.log(newFillter);
+  }
 
   const FetchDataFromServer = () =>{
     axios.get(`http://localhost:8080/skincare?_page=${curretpage}&_limit=50`).then((res)=>{
@@ -62,8 +65,6 @@ export const RightSection = () => {
             <Heading size={"md"}>SORT BY</Heading>
             <Stack spacing={3}>
               <Select variant="outline" >
-                <option value="Featured">Featured</option>
-                <option value="NewArrivals">New Arrivals</option>
                 <option value="BestSellers">Best Sellers</option>
                 <option value="PriceLowToHigh">Price, Low to High</option>
                 <option value="PriceHighToLow">Price, High to Low</option>    
@@ -96,7 +97,9 @@ export const RightSection = () => {
          colorScheme='gray'
        >
          <TagLabel>{item}</TagLabel>
-         <TagCloseButton />
+         <TagCloseButton 
+         onClick={()=>RemoveTag(item)}
+         />
        </Tag>   
         ))}
       </Box>
