@@ -94,9 +94,57 @@ const HomePage = () => {
 
 
        
+{/* line3-------------------------------------------------------- */}
 
-       
 
+<div className="main3">
+      
+        <p>OCEAN EYES</p>
+      
+
+      <div className="nav2">
+        <p>This high-performance treatment resurfaces and reinforces your skin’s
+        moisture barrier in one easy step to reveal smooth, radiant skin.</p>
+        
+      </div>
+
+      <div class="nav">
+        <div>
+          <a class="menu-cards" href=" ">
+            <img
+              class="image"
+              style={{ width: 250, height: 300 }}
+              src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/OSEA_shop_the_collection_600x.progressive.jpg?v=1657661079"
+              alt=""
+              data-testid=""
+            />
+          </a>
+        </div>
+
+
+        
+        <div className="main_1">
+          <a class="menu-cards" href="/menu/biryani-buckets">
+            <img
+              class="image"
+              style={{ width: 150, height: 180 , marginLeft:51}}
+              src="https://cdn.shopify.com/s/files/1/0283/0185/2747/products/global_images-675468101738-1_235x235_crop_center.jpg?v=1658261512"
+              alt=""
+              data-testid=""
+            />
+          </a>
+          <div nav5>
+            <p>OSER</p>
+            <p>Seaglow Overnigth serum</p>
+            <p>$63</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+{/* coursal 2------------------------------------------------------------ */}
 
 
 
