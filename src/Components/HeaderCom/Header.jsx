@@ -1,5 +1,5 @@
 import React from "react";
-import { Samplecart } from "../CartCom/Samplecart";
+
 
 import style from "./Header.module.css";
 import { LocationIcon } from "./LocationIcon";
@@ -22,8 +22,10 @@ const Header = () => {
         </div>
 
       <div className={style.icons}>
+
+      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+ 
       {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> */}
-      <Samplecart />
 
       </div>
       <img
