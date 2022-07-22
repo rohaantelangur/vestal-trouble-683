@@ -5,6 +5,7 @@ import "./HomePage.css"
 
 import {bestSeller} from "./SliderData"
 import {newArrival} from "./SliderData"
+import {tranding} from "./SliderData"
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -230,7 +231,51 @@ const HomePage = () => {
     </div>
 
 
-coursal 3---------------------------------------------------------
+{/* coursal 3--------------------------------------------------------- */}
+
+
+<Box h="350px" mt="5" mb="10">
+  <div className='nav_a'>
+  <h2>SIMILAR PRODUCTS</h2>
+  </div>
+  
+      
+       <Swiper
+        slidesPerView={4}
+        spaceBetween={30}
+        slidesPerGroup={4}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Navigation]}
+        className="mySwiper"
+      >
+        {tranding.map((item)=>
+        {
+          return  <SwiperSlide>
+          <Stack fontSize={"14px"}>
+
+          <Image color={"#12284c"} h="50px"src={item.image} />
+          <Text>{item.brand}</Text>
+          <Text color={"gray"} >
+            {item.name}
+          </Text>
+          <Text color={"gray"}>
+            $. {item.price}
+          </Text>
+          </Stack>
+        </SwiperSlide>
+       
+        })
+
+        }
+       
+        
+      </Swiper>
+    </Box>
 
 
 
