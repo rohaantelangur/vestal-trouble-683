@@ -6,12 +6,7 @@ import {AiOutlineHeart} from "react-icons/ai"
 import {FaSearch} from "react-icons/fa"
 import {BiUserCircle} from "react-icons/bi"
 
-
 import style from "./Header.module.css";
-import { LocationIcon } from "./LocationIcon";
-import { SearchIcon } from "./SearchIcon";
-import { UserIcon } from "./UserIcon";
-import { WishlistIcon } from "./WishlistIcon";
 
 const Header = () => {
   return (
@@ -68,10 +63,7 @@ const Header = () => {
                     </ul>
                   </div>
       <div className={style.icons}>
-
-      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
  
-      {/* <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> */}
 
                     <ul className={style.menu1_ul}>
                       <h4 style={{ color: "blue", fontWeight: "600" }}>
