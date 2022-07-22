@@ -1,4 +1,5 @@
 import React from "react";
+import { Samplecart } from "../CartCom/Samplecart";
 
 import style from "./Header.module.css";
 import { LocationIcon } from "./LocationIcon";
@@ -9,6 +10,7 @@ import { WishlistIcon } from "./WishlistIcon";
 const Header = () => {
   return (
     <div className={style.mainDiv}>
+
       <div className={style.icons} id={style.headericons}>
         <div>
           <LocationIcon />
@@ -18,6 +20,11 @@ const Header = () => {
           <SearchIcon />
           <UserIcon />
         </div>
+
+      <div className={style.icons}>
+      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+      <Samplecart />
+
       </div>
       <img
         src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
