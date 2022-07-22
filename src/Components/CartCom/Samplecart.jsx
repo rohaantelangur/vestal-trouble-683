@@ -58,9 +58,27 @@ const unique = AddtoCart.filter(element => {
   
   let totalPrice=0
   return (
-    <Box   fontFamily="Montserrat Semi Bold">
-    <Button  bgColor="#f8f8f8" onClick={() => handleClick("md")} key={"md"} m={4}>
-     <BagIcon />  YOUR BAG
+    <Box   fontFamily="Montserrat Semi Bold" mt={"-4"} mr={3}>
+    <Button  onClick={() => handleClick("md")} key={"md"} m={4} variant={"ghost"}   _hover={{
+          
+           variant:"ghost",
+         
+          }}>
+            
+     <BagIcon  />
+        
+     <Box
+        pos={"absolute"}
+        top="4"
+        left={"24px"}
+        
+        textAlign="center"
+      >
+        <Text color={"white"} fontSize="12px" >
+        {AddtoCart.length}
+        </Text>
+      </Box>
+          BAG
     </Button>
     <Drawer onClose={onClose} isOpen={isOpen} size={"md"} bgColor="#f8f8f8">
       <DrawerOverlay />
