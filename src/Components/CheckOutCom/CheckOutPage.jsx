@@ -5,6 +5,7 @@ import {
   FormErrorMessage,
   FormHelperText,
   FormLabel,
+  Checkbox,
   Heading,
   Image,
   Input,
@@ -17,12 +18,26 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addAdress, getAdress } from "../../Redux/Adress/action";
+import { CheckoutHeader } from "./CheckoutHeader";
 
 import { CheckOutSmallDiv } from "./CheckOutSmallDiv";
 
 export const CheckOutPage = () => {
   const AddtoCart = useSelector((state) => state.Cartreducer.AddtoCart);
-  console.log(AddtoCart)
+
+    const uniqueIds = [];
+console.log(AddtoCart)
+const unique = AddtoCart.filter(element => {
+  const isDuplicate = uniqueIds.includes(element.id);
+
+  if (!isDuplicate) {
+    uniqueIds.push(element.id);
+
+    return true;
+  }
+
+  return false;
+});
   let totalPrice = 0;
   const [adress,setAdress]=useState({})
   const dispatch = useDispatch();
@@ -58,20 +73,17 @@ console.log(value);
       <Box>
         <Flex>
           <Box width="50%" p="4">
-            <Image
-              h="60px"
-              ml="-0.5"
-              src="https://assets.rha-audio.com/nzssx/c/Headphone_zone_logo_3-small.png"
-            />
+           <CheckoutHeader />
             <Flex justifyContent={"space-between"}>
-              <FormLabel htmlFor="email">Email address</FormLabel>
+              <FormLabel htmlFor="email">Contanct Information</FormLabel>
               <FormLabel onClick={()=>navigate("/login")}>
                 {" "}
                 Already have an account?Log in
               </FormLabel>
             </Flex>
 
-            <Input placeholder="Search here" size="lg" width={"100%"} />
+            <Input placeholder="Email" size="lg" width={"100%"} />
+            <Checkbox defaultChecked color={"#dcdcdc"} >Email me with news and offers</Checkbox>
             <Box mt={"20px"}>
               <FormLabel>Shipping Adress</FormLabel>
 
@@ -200,8 +212,8 @@ console.log(value);
       
           <Box bg="#f5f5f5" width="50%" p="6">
             <Box>
-              {AddtoCart.map((item) => {
-                totalPrice += item.totalPrice;
+              {unique.map((item) => {
+            totalPrice+=item.priceMax
                 return <CheckOutSmallDiv key={item.id} {...item} />;
               })}
             </Box>

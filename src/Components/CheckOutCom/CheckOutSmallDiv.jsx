@@ -2,12 +2,13 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
 export const CheckOutSmallDiv = (props) => {
-  const { image, name, quantity, id, totalPrice } = props;
+  const { price, type, title, quantity, vendor, id } = props;
+  const { src } = props.images[0];
   return (
     <Box>
       <Box display={"flex"} flexWrap={"wrap"} gap="20px" p="6">
         <Box w={"80px"} h="80px" display="flex">
-          <Image borderRadius={"5px"} src={image} />
+          <Image borderRadius={"5px"} src={src} />
         </Box>
         <Box
           borderRadius="50"
@@ -31,11 +32,11 @@ export const CheckOutSmallDiv = (props) => {
             fontWeight={500}
             whiteSpace={"nowrap"}
           >
-            <Text>{name}</Text>
+            <Text>{title}</Text>
           </Box>
         </Box>
         <Box p="5" fontFamily={""} fontSize="18px" fontWeight={500}>
-          ₹.{(totalPrice).toLocaleString("hi-IN")} .00
+          ₹.{(price).toLocaleString("hi-IN")} .00
         </Box>
       </Box>
     </Box>

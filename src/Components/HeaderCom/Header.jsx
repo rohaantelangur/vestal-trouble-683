@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Samplecart } from "../CartCom/Samplecart";
 
 
 import style from "./Header.module.css";
@@ -20,7 +21,7 @@ const Header = () => {
           <WishlistIcon style={{marginRight: "10px", border: "1px solid black"}} />
           <SearchIcon />
           <UserIcon />
-          
+          <Samplecart />
         </div>
 
       <div className={style.icons}>

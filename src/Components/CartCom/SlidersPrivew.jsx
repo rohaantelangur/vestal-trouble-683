@@ -37,7 +37,7 @@ export const SlidersPrivew = () => {
       >
         {sliderData.map((item)=>
         {
-          return  <SwiperSlide>
+          return  <SwiperSlide key={item.id}>
           <Stack fontSize={"14px"}>
 
           <Image color={"#12284c"} h="50px"src={item.image} />
