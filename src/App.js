@@ -8,6 +8,7 @@ import Products from "./Page/Products";
 import { MainCartBag } from "./Components/CartCom/MainCartBag";
 import { Signup } from "./Components/SignupCom/Signup";
 import { Login } from "./Components/LoginCom/Login";
+import { SingleProduct } from "./Components/SingleProCom/SingleProduct";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/mainCartBag" element={<MainCartBag />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
