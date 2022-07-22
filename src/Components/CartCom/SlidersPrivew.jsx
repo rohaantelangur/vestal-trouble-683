@@ -1,17 +1,17 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import {slideone} from "./sliderdata.js/sliderData"
+// import {slideone} from "./sliderdata.js/sliderData"
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 import "./style.css";
 
 
 export const SlidersPrivew = () => {
-    console.log(slideone)
+    // console.log(slideone)
   return (
     <Box>
         <Swiper
