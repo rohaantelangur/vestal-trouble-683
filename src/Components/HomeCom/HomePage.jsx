@@ -4,6 +4,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import "./HomePage.css"
 
 import {bestSeller} from "./SliderData"
+import {newArrival} from "./SliderData"
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -67,7 +68,7 @@ const HomePage = () => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {bestSeller.map((item)=>
+        {newArrival.map((item)=>
         {
           return  <SwiperSlide>
           <Stack fontSize={"14px"}>
@@ -148,7 +149,85 @@ const HomePage = () => {
 
 
 
+<Box h="350px" mt="5" mb="10">
+  <div className='nav_a'>
+  <h2>SIMILAR PRODUCTS</h2>
+  </div>
+  
+      
+       <Swiper
+        slidesPerView={4}
+        spaceBetween={30}
+        slidesPerGroup={4}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Navigation]}
+        className="mySwiper"
+      >
+        {bestSeller.map((item)=>
+        {
+          return  <SwiperSlide>
+          <Stack fontSize={"14px"}>
 
+          <Image color={"#12284c"} h="50px"src={item.image} />
+          <Text>{item.brand}</Text>
+          <Text color={"gray"} >
+            {item.name}
+          </Text>
+          <Text color={"gray"}>
+            $. {item.price}
+          </Text>
+          </Stack>
+        </SwiperSlide>
+       
+        })
+
+        }
+       
+        
+      </Swiper>
+    </Box>
+
+
+
+{/* line5------------------------------------------------------------------------------ */}
+
+
+
+<div className="main4">
+      
+
+
+
+
+<div className="nav_1a">
+<a class="menu-cards" href=" "><img class='image' style = {{ width : 570, height : 370, marginTop : 20 }}
+
+    src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bader_side_by_side_640x.jpg?v=1658339677"
+    alt="" data-testid="" />
+     
+</a>
+<h1>The Light Cream</h1>  
+  <p>A refreshing, weightless gel emulsion with a matte-like finish from Augustinus Bader. This cream deeply nourishes, combats signs of ageing and targets the root cause of overactive sebum</p> 
+    <h2>SHOP NOW</h2>  
+</div>
+<div className="nav_2a">
+<a class="menu-cards" href=" "><img class='image'  style = {{ width : 570, height : 370, marginTop : 20 }}
+
+    src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/BAL_side_by_side_FINAL_640x.jpg?v=1652904545"
+    alt="" data-testid="" />
+     
+</a>
+<div> <h2>Beauty Alfresco</h2>  </div>
+    <div class="menu-text"> This summer is all about the outdoors, and we're here for it. You can find everything you need to make your summer outside a success in our curated collection of seasonal essentials. </div>
+    <div><h2>SHOP SUMMER MUST-HAVES</h2>  </div>
+</div>
+   
+    </div>
 
     </div>
   )

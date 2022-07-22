@@ -112,3 +112,25 @@ text-align: center;
   text-align: center;
   margin-top: 3%;
   }
+
+
+
+  /* line5-------------------------------------------------------------------- */
+
+
+
+  .main4{
+    display: flex;
+    width: 90%;
+    height: 650px;
+   margin: auto;
+    
+}
+/* .nav_1a{
+    height: 460px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.nav_2a{
+    height: 460px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
