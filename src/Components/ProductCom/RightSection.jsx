@@ -22,7 +22,27 @@ export const RightSection = () => {
   const Fillter = useSelector((store)=>store.Fillters.Fillter)
   const [curretpage, setcurretpage] = useState(1);
   const [products, setproducts] = useState([])
+  const [sort, setsort] = useState("")
   const dispatch = useDispatch();
+  
+  const HandleSort =(str) =>{
+    switch (str) {
+      case "PriceLowToHigh":
+        setproducts(products.sort((a,b)=>a.price - b.price))
+        setsort(str)
+      break;
+    
+      case "PriceHighToLow":
+        setproducts(products.sort((a,b)=>b.price - a.price))
+        setsort(str)
+      break;
+
+      default:
+        break;
+    }
+    console.log(products,str);
+
+  }
 
   const onPageChange = (direction) => {
     if (direction === "Prev") {
@@ -64,7 +84,7 @@ export const RightSection = () => {
           <Stack direction={"row"} align="center" pt={"5"}>
             <Heading size={"md"}>SORT BY</Heading>
             <Stack spacing={3}>
-              <Select variant="outline" >
+              <Select variant="outline" onChange={(e)=>{HandleSort(e.target.value)}}>
                 <option value="BestSellers">Best Sellers</option>
                 <option value="PriceLowToHigh">Price, Low to High</option>
                 <option value="PriceHighToLow">Price, High to Low</option>    
