@@ -1,11 +1,12 @@
 
 
-import { Box } from '@chakra-ui/react'
+import { Box,Text } from '@chakra-ui/react'
 import React from 'react'
 
 export const BagIcon = () => {
   return (
-    <Box>
+    <Box pos={"relative"}>
+              
 <svg
   class="Icon Icon--bag"
   height="24px"
@@ -36,6 +37,7 @@ export const BagIcon = () => {
     </g>
   </g>
 </svg>
+
     </Box>
   )
 }

@@ -16,6 +16,18 @@
     height: 40px;
 }
 
+#headericons{
+  display: flex;
+  border: 2px solid blue;
+  justify-content: space-between;
+}
+
+.icon{
+  display: flex;
+  border: 2px solid rgb(223, 143, 156);
+  justify-content: space-between;
+  width: 100px;
+}
 .navTitle{
     border: 2px solid red;
     padding: 16px;
@@ -51,6 +63,7 @@ h3:hover {
 
 .menu_experiment{
     border: 2px solid #008000;
+    position: relative;
     /* width: 100%; */
     /* display: none; */
     /* margin-top: 30px; */
