@@ -1,5 +1,6 @@
 import React from "react";
-import "./Product.css";
+// import "./Product.css";
+import style from "./Product.module.css";
 const Product = () => {
   return (
     <div class="nav">
