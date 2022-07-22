@@ -3,17 +3,19 @@ import React from 'react'
 import {sliderData} from "./sliderdata"
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
+// import {slideone} from "./sliderdata.js/sliderData"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 import "./styles.css";
 import { Pagination, Navigation } from "swiper";
 
 
 export const SlidersPrivew = () => {
+    // console.log(slideone)
     
   return (
     <Box h="350px" mt="20" mb="10" fontFamily={`"Montserrat Regular",sans-serif`} color="#12284C">
