@@ -279,6 +279,29 @@ const HomePage = () => {
 
 
 
+{/* line7-------------------------------------------------------------------------------------------------- */}
+
+<div className="main_4a">
+      
+
+
+
+
+      <div className="nav_1c">
+      <a class="menu-cards" href=" "><img class='image' style = {{ width : 600, height : 450, marginTop : 20 }}
+      
+          src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/samples-content_block_705x705.jpg?v=1604551537"
+          alt="" data-testid="" />
+           
+      </a>
+      </div>
+      <div className='nav_2c'>
+      <h2>Midnight Recovery Omega Rich Cloud Cream</h2>  
+          <p>Whipped into a lightweight cloud-like texture, this renewing botanical face cream sinks right into the skin, delivering visible radiance. Wake up with plumper, more youthful-looking skin by morning.</p> 
+           <a href=" ">SHOP NOW</a> 
+      </div>
+      </div>
+
 
 
     </div>

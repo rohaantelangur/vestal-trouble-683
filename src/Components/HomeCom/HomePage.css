@@ -134,3 +134,33 @@ text-align: center;
     height: 460px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 } */
+
+
+
+/* line7--------------------------------------------------------------- */
+
+
+
+
+.main_4a{
+  display: flex;
+  width: 90%;
+  height: 500px;
+  /* background-color: aqua; */
+  margin: auto;
+}
+.nav_1c{
+  width: 56%;
+  height: 500px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  /* margin: auto; */
+  
+}
+.nav_2c{
+  width: 50%;
+  height: 500px;
+  margin-top: 9%;
+  margin-left: 3%;
+  /* margin: auto; */
+}
+
