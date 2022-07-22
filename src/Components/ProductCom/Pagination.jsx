@@ -14,6 +14,7 @@ export const Pagination = ({ total, selected, onPageChange }) => {
       {page?.map((item, index) => {
           return (
               <Button
+              onClick={() => onPageChange(index+1)}
               m={1}
               key={index}
               className={+selected === index + 1 ? "btnselected" : ""}
