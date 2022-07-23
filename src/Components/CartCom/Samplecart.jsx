@@ -75,7 +75,7 @@ const unique = AddtoCart.filter(element => {
         textAlign="center"
       >
         <Text color={"white"} fontSize="12px" >
-        {AddtoCart.length}
+        {AddtoCart?.length}
         </Text>
       </Box>
           BAG
@@ -92,7 +92,7 @@ const unique = AddtoCart.filter(element => {
           </Box>
           <Box mt="2">
               {
-                  unique.map((item)=>
+                  unique?.map((item)=>
                   {
                     totalPrice+=item.priceMax
                       return  <SideCartShow key={item.id} {...item} />

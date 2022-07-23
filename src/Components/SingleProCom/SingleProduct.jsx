@@ -1,53 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./SingleProduct.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../Redux/AppReducer/action";
 import axios from "axios";
+import { Box, Image, Img, Text } from "@chakra-ui/react";
 import { ProductAbout } from "./ProductAbout";
 
 export const SingleProduct = () => {
   const { id } = useParams();
   const { category } = useParams();
-  const product = useSelector((state) => state.Appreducer.products);
-  console.log("product:", product);
-  const [currentProduct, setProduct] = useState({});
-  const dispatch = useDispatch();
+  const [currentProduct, setcurrentProduct] = useState({});
+  const [currentImage1, setcurrentImage1] = useState("");
+  const [currentImage2, setcurrentImage2] = useState("");
+
+  const getData = () => {
+    axios
+      .get(`http://localhost:8080/${category}/${id}`)
+      .then((res) => {
+        setcurrentProduct(res.data);
+        setcurrentImage1(res.data.images[0].src);
+        setcurrentImage2(res.data.images[1].src);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
-    if (product?.length === 0) {
-      // dispatch(getProducts());
-    }
-  }, [product?.length, dispatch]);
-
-  useEffect(() => {
-    // if(id) {
-    //   const temp = product?.find((item)=>item.category === category).find((item) => item.id === Number(id))
-    //   temp && setProduct(temp)
-    // }
-  }, [product, id, category]);
-
-  useEffect(() => {
-    if ((category, id)) {
-      axios
-        .get(`http://localhost:8080/${category}/${id}`)
-        .then((res) => {
-          console.log("data", res.data);
-          setProduct(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [category, id]);
-  // }, [category, id])
-  // https://cdn.shopify.com/s/files/1/0283/0185/2747/products/global_images-5060445300023-1.jpg?v=1656523237
-  // currentProduct.images[0]?.src
+    getData();
+    console.log(currentProduct);
+  }, []);
   return (
     <div className={style.outerdiv}>
       <div className={style.mainDiv}>
         <div>
-          {/* <img  className={style.img} src={`https:${currentProduct.images[0]?.src}`} alt="" /> */}
+          <img className={style.img} src={currentImage1} alt="" />
         </div>
 
         <div className={style.info}>
@@ -61,6 +47,29 @@ export const SingleProduct = () => {
           <span className={style.text}>
             4 interest-free payments of $20.50 with Klarna.
           </span>
+          <p className={style.desc}>
+            A hydrating, oil-free gel foundation with a refreshing and
+            lightweight texture.<strong> BlueRewards Exclusive!</strong>5-piece
+            deluxe sample bag free with any ₹1400+ purchase
+          </p>
+
+          <div className={style.giftBox}>
+            <div>
+              <img
+                src="https://cdn.shopify.com/s/files/1/0283/0185/2747/products/global_images-656509807154-1_64x.jpg?v=1653615606"
+                alt=""
+              />
+            </div>
+            <div style={{letterSpacing: "1px"}}>
+               <p style={{color: "grey", fontSize: "14px"}}>Free Gift with Purchase</p> 
+              <p style={{ fontSize: "15px"}}>
+                Summer Skincare Essentials 
+              </p>
+              <p style={{color: "grey", fontSize: "14px"}}>Free with any ₹2000+ Chantecaille
+                purchase</p>
+            </div>
+          </div>
+
           <div className={style.btnDiv}>
             <div className={style.btn}>ADD TO BAG </div>
 
@@ -72,7 +81,7 @@ export const SingleProduct = () => {
       </div>
 
       <div className={style.aboutDiv}>
-        <ProductAbout/>
+        <ProductAbout />
       </div>
     </div>
   );

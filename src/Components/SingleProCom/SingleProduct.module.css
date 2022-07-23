@@ -2,11 +2,14 @@
     border: 2px solid black;
     display: flex;
     height: 560px;
-    justify-content: space-between;
+    justify-content: space-around;
     font-family: Montserrat Light,sans-serif;
-    width: 80%;
+    width: 100%;
     margin: auto;
     margin-bottom: 100px;
+    padding-bottom: 20px;
+    background-color: #f8f8f8;
+
 }
 
 .aboutDiv{
@@ -29,22 +32,32 @@ width: 50%;
 .productDiv{
     display: flex;
     justify-content: space-between;
-    color: grey;
+    color: rgb(133, 112, 112);
+    font-size: 16px;
+    font-family: Montserrat Light,sans-serif;
+    flex: 1 1 0%;
+    line-height: 2;
+    background-color: #fff;
+    letter-spacing: 1px;
+    
 }
 
 .productDiv > div:first-child {
     width: 30%;
-
+    font-size: 26px;
+    padding-left: 2rem;
+    padding-top: 1rem;
 }
 
 .productDiv > div:last-child {
 width: 65%;
-    
+padding-top: 2.5rem;
+
 }
 
 .mainDiv > div{
     border: 2px solid blue;
-/* width: 50%; */
+width: 50%;
 background-color: #fff;
 
 }
@@ -52,12 +65,23 @@ background-color: #fff;
 .mainDiv > div:first-child{
     margin-right: 20px;
     margin-top: 2rem;
+    align-items: center;
+    padding-left: 3rem;
 }
 
 .outerdiv{
     /* border: 2px solid red; */
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    font-family: Montserrat Light,sans-serif;
 
+}
+
+.p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .info{
@@ -69,8 +93,8 @@ background-color: #fff;
 }
 
 .img{
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     text-align: center
 }
 
@@ -101,12 +125,6 @@ background-color: #fff;
     font-size: 14px;
 }
 
-.btn{
-    /* border: 1px solid blue; */
-    /* display: block; */
-    
-}
-
 .btnDiv{
     display: flex;
     justify-content: space-between;
@@ -117,6 +135,39 @@ background-color: #fff;
     font-weight: 600;
     padding-left: 14px;
     padding-right: 14px;
-    margin-top: 4rem;
-    margin-left: 20px;
+    margin-top: 2.5rem;
+    /* margin-left: 20px; */
+}
+
+.desc{
+    margin-top: 2rem;
+}
+
+.giftBox{
+    border: 1px solid rgb(222, 213, 213);
+    width: 45%;
+    display: flex;
+    margin-top: 2rem;
+    /* justify-content: space-between; */
+}
+
+.giftBox > div {
+    /* border: 2px solid black; */
+}
+
+.giftBox > div:first-child {
+   margin-right: 7px;
+   padding: 10px;
+   align-items: center;
+   width: 20%
+}
+
+.giftBox img{
+    width: 120px;
+    height: 60px;
+}
+
+.giftBox > div:last-child {
+    /* width: 30% */
+
 }

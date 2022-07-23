@@ -1,10 +1,12 @@
+
 import React from "react";
-import { Samplecart } from "../CartCom/Samplecart";
+
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
+
 
 import style from "./Header.module.css";
 import { Link } from "react-router-dom";
@@ -18,14 +20,19 @@ const Header = () => {
           {/* <span color="#12284c" fontSize="10px">STORE & SPA LOCATOR</span> */}
         </div>
         <div className={style.icon}>
+
+      
+        
+
           <AiOutlineHeart />
           <BsSearch />
           <BiUserCircle />
           <BsFillBagCheckFill />
 
+</div>
           {/* <Samplecart /> */}
         </div>
-      </div>
+      
       <div className={style.icons}>
         <img
           src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
@@ -502,7 +509,7 @@ const Header = () => {
         </header>
       </div>
     </div>
-    // </div>
+    
   );
 };
 
