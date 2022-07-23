@@ -335,7 +335,8 @@ const HomePage = () => {
       <div className='nav_c' style = {{ marginTop:20  }} ><h2>FREE GIFTS WITH PURCHASE</h2>  </div>
           <div className='nav_c' > Stock up all, then try somthing new on us</div>
           
-          <div  className='nav_b'>  <a href=" ">BROWSE NOW</a> </div>
+          
+          <div  className='nav_b'>  <Text  as='u' href=" ">BROWSE NOW</Text> </div>
       </div>
       <div className="nav_2d">
       <a class="menu-cards" href=" "><img class='image'  style = {{ width : 380, height : 330, marginTop : 20 }}
