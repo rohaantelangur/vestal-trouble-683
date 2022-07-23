@@ -219,8 +219,8 @@ const HomePage = () => {
 
 <div className='nav_c'><p>A refreshing, weightless gel emulsion with a matte-like finish from Augustinus Bader. This cream deeply nourishes, combats signs of ageing and targets the root cause of overactive sebum</p> </div> 
   
-      
-    <div  className='nav_b'>  <a href=" ">SHOP NOW</a> </div>
+<div  className='nav_b'>  <Text  as='u' href=" ">SHOP NOW</Text> </div>
+    
 </div>
 <div className="nav_2a">
 <a class="menu-cards" href=" "><img class='image'  style = {{ width : 570, height : 370, marginTop : 20 }}
@@ -232,7 +232,8 @@ const HomePage = () => {
 <div className='nav_c'> <h2>Beauty Alfresco</h2>  </div>
     <div className='nav_c'> This summer is all about the outdoors, and we're here for it. You can find everything you need to make your summer outside a success in our curated collection of seasonal essentials. </div>
     
-    <div  className='nav_b'>  <a href=" ">SHOP SUMMER MUST-HAVES</a> </div>
+    
+    <div  className='nav_b'>  <Text  as='u' href=" ">SHOP SUMMER MUST-HAVES</Text> </div>
 </div>
    
     </div>
@@ -308,7 +309,9 @@ const HomePage = () => {
       <div className='nav_c'><p>Whipped into a lightweight cloud-like texture, this renewing botanical face cream sinks right into the skin, delivering visible radiance. Wake up with plumper, more youthful-looking skin by morning.</p>  </div>
           
           
-           <div  className='nav_b'>  <a href=" ">SHOP NOW</a> </div>
+           
+           <div  className='nav_b'>  <Text  as='u' href=" ">SHOP NOW</Text> </div>
+           
       </div>
       </div>
 
