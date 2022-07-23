@@ -12,7 +12,7 @@ export const SingleProduct = () => {
   const [currentProduct, setcurrentProduct] = useState({});
   const [currentImage1, setcurrentImage1] = useState("");
   const [currentImage2, setcurrentImage2] = useState("");
-  const [activeImage, setActiveImage] = useState(currentImage1);
+  const [activeImage, setActiveImage] = useState("");
 
   const getData = () => {
     axios
@@ -21,6 +21,7 @@ export const SingleProduct = () => {
         setcurrentProduct(res.data);
         setcurrentImage1(res.data.images[0].src);
         setcurrentImage2(res.data.images[1].src);
+        setActiveImage(res.data.images[0].src)
       })
       .catch((err) => {
         console.log(err);
@@ -32,11 +33,6 @@ export const SingleProduct = () => {
     console.log(currentProduct);
   }, []);
 
-  // console.log('activeImage:', activeImage)
-
-  const handleImage1 = () => {
-    setActiveImage(currentImage1);
-  };
 
 
   return (
