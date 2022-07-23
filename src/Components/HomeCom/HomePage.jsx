@@ -346,7 +346,7 @@ SHOP NOW
       <div className={styles.nav_c}style = {{ marginTop:20  }} ><h2>FREE GIFTS WITH PURCHASE</h2>  </div>
           <div className={styles.nav_c} > Stock up all, then try somthing new on us</div>
           <Link  className={styles.nav_b}     href= ' ' isExternal>
-BROWSE NOW
+BROWSES NOW
 </Link>
           
           
