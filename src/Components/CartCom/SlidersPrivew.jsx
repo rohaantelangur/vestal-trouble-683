@@ -18,7 +18,7 @@ export const SlidersPrivew = () => {
     // console.log(slideone)
     
   return (
-    <Box h="350px" mt="20" mb="10" fontFamily={`"Montserrat Regular",sans-serif`} color="#12284C">
+    <Box h="400px" mt="20" mb="10" fontFamily={`"Montserrat Regular",sans-serif`} color="#12284C">
       <Stack ml={"40%"}>
 
       <Heading size={"md"}letterSpacing="2px"  fontSize="24px" fontWeight={400} p="10">SIMILAR PRODUCTS</Heading>
@@ -39,7 +39,7 @@ export const SlidersPrivew = () => {
       >
         {sliderData.map((item)=>
         {
-          return  <SwiperSlide>
+          return  <SwiperSlide key={item.id}>
           <Stack fontSize={"14px"}>
 
           <Image color={"#12284c"} h="50px"src={item.image} />
