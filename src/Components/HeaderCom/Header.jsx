@@ -35,11 +35,13 @@ const Header = () => {
         </div>
       
       <div className={style.icons}>
+        <Link to={"/"}>
         <img
           src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/bluemercury-logo_1216x.png?v=1648743182"
           className={style.logo}
           alt="bluemercury-logo"
-        />
+          />
+          </Link>
       </div>
 
       <div className={style.navTitle}>
