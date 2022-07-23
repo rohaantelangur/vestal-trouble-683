@@ -16,40 +16,39 @@ import {
 import { AddIcon, SearchIcon } from "@chakra-ui/icons";
 import { Filter } from "./FillterData";
 import { useSearchParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
 
-export const LeftSection = (category) => {
-
+export const LeftSection = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const Fillter = useSelector((store)=>store.Fillters.Fillter)
 
-  const [selectedCategory, setSelectedCategory] = useState(
-    searchParams.getAll("category") || []
-  );
   const dispatch = useDispatch();
 
-
-
   const handleAddFilter = (category) =>{
-    console.log(category);
-    let newSelectedCategory = [...selectedCategory];
 
-    if (selectedCategory.includes(category)) {
-      newSelectedCategory.splice(newSelectedCategory.indexOf(category), 1);
+    let newFillter = [...Fillter];
+
+    if (newFillter.includes(category)) {
+      newFillter.splice(newFillter.indexOf(category), 1);
     } else {
-      newSelectedCategory.push(category);
+      newFillter.push(category);
     }
 
-    setSelectedCategory(newSelectedCategory);
-    dispatch({type:ADD_FILLTER, payload:newSelectedCategory})
-    console.log(newSelectedCategory);
+    dispatch({type:ADD_FILLTER, payload:newFillter})
+
   }
 
   useEffect(() => {
-    if (selectedCategory) {
-      setSearchParams({ category: selectedCategory });
+    if (Fillter) {
+      setSearchParams({ category: Fillter });
     }
-  }, [selectedCategory, setSearchParams]);
+  }, [ setSearchParams, Fillter]);
+
+  useEffect(()=>{
+    dispatch({type:ADD_FILLTER, payload:searchParams.getAll("category")})
+  },[])
+
   return (
     <Box mt={5} w="25%">
       <Heading size="sm" mt={5} >
@@ -121,7 +120,7 @@ export const LeftSection = (category) => {
               >
                 {obj.Sub.map((item, index) => (
                   <Checkbox
-                  defaultChecked={selectedCategory.includes(item)? true : false} 
+                  defaultChecked={Fillter?.includes(item)? true : false} 
                   colorScheme="gray" size="lg" key={index} 
                   onChange={() => handleAddFilter(item)}
                   >
