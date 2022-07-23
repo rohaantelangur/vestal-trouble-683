@@ -156,6 +156,7 @@ export const CartShowList = (props) => {
         </Box>
       </Box>
       <Box borderBottom={"1px solid #dcdcdc"} mt="3" mb={"3"} ></Box>
+      
     </Box>
   );
 };
