@@ -12,7 +12,7 @@ export const SingleProduct = () => {
   const [currentProduct, setcurrentProduct] = useState({});
   const [currentImage1, setcurrentImage1] = useState("");
   const [currentImage2, setcurrentImage2] = useState("");
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImage, setActiveImage] = useState(currentImage1);
 
   const getData = () => {
     axios
@@ -46,6 +46,7 @@ export const SingleProduct = () => {
           <div>
             <img
               className={style.thumbnail}
+              onClick={()=>{setActiveImage(currentImage1)}}
               id="main-img"
               src={currentImage1}
               alt=""
@@ -54,7 +55,7 @@ export const SingleProduct = () => {
           <div>
             <img
               className={style.thumbnail}
-              // onClick={() => handleImage2}
+              onClick={()=>{setActiveImage(currentImage2)}}
               id="main-img-1"
               src={currentImage2}
               alt=""
@@ -64,7 +65,7 @@ export const SingleProduct = () => {
 
         <div className={style.imgDiv}>
         
-          <img id={style.featured} className={style.img}  src={currentImage1} alt="" />
+          <img id={style.featured} className={style.img}  src={activeImage} alt="" />
         </div>
 
         <div className={style.info}>
