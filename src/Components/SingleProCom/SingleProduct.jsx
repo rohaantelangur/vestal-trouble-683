@@ -4,6 +4,7 @@ import style from "./SingleProduct.module.css";
 import axios from "axios";
 import { Box, Image, Img, Text } from "@chakra-ui/react";
 import { ProductAbout } from "./ProductAbout";
+import { SliderComponent } from "./SliderComponent";
 
 export const SingleProduct = () => {
   const { id } = useParams();
@@ -11,6 +12,7 @@ export const SingleProduct = () => {
   const [currentProduct, setcurrentProduct] = useState({});
   const [currentImage1, setcurrentImage1] = useState("");
   const [currentImage2, setcurrentImage2] = useState("");
+  const [activeImage, setActiveImage] = useState("");
 
   const getData = () => {
     axios
@@ -29,21 +31,40 @@ export const SingleProduct = () => {
     getData();
     console.log(currentProduct);
   }, []);
+
+  // console.log('activeImage:', activeImage)
+
+  const handleImage1 = () => {
+    setActiveImage(currentImage1);
+  };
+
+
   return (
     <div className={style.outerdiv}>
       <div className={style.mainDiv}>
-      <div className={style.thumbnail} id="thumbnail-image">
-        <div>
-          <img className={style.thumbnail}  id="main-img" src={currentImage1} alt="" />
+        <div className={style.thumbnail} id="thumbnail-image">
+          <div>
+            <img
+              className={style.thumbnail}
+              id="main-img"
+              src={currentImage1}
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className={style.thumbnail}
+              // onClick={() => handleImage2}
+              id="main-img-1"
+              src={currentImage2}
+              alt=""
+            />
+          </div>
         </div>
-        <div>
-          <img className={style.thumbnail} id="main-img-1"  src={currentImage2} alt="" />
-        </div>
-      </div>
 
         <div className={style.imgDiv}>
-        <img id={style.featured} className={style.img}  src={currentImage1} alt="" />
-
+        
+          <img id={style.featured} className={style.img}  src={currentImage1} alt="" />
         </div>
 
         <div className={style.info}>
@@ -70,13 +91,14 @@ export const SingleProduct = () => {
                 alt=""
               />
             </div>
-            <div style={{letterSpacing: "1px"}}>
-               <p style={{color: "grey", fontSize: "14px"}}>Free Gift with Purchase</p> 
-              <p style={{ fontSize: "15px"}}>
-                Summer Skincare Essentials 
+            <div style={{ letterSpacing: "1px" }}>
+              <p style={{ color: "grey", fontSize: "14px" }}>
+                Free Gift with Purchase
               </p>
-              <p style={{color: "grey", fontSize: "14px"}}>Free with any ₹2000+ Chantecaille
-                purchase</p>
+              <p style={{ fontSize: "15px" }}>Summer Skincare Essentials</p>
+              <p style={{ color: "grey", fontSize: "14px" }}>
+                Free with any ₹2000+ Chantecaille purchase
+              </p>
             </div>
           </div>
 
@@ -92,6 +114,9 @@ export const SingleProduct = () => {
 
       <div className={style.aboutDiv}>
         <ProductAbout />
+      </div>
+      <div className={style.sliderDiv}>
+      <SliderComponent />
       </div>
     </div>
   );

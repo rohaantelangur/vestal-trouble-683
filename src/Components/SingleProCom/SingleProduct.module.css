@@ -17,8 +17,7 @@
     font-family: Montserrat Light,sans-serif;
     width: 80%;
     margin: auto;
-    margin-bottom: 100px;
-    
+    margin-bottom: 40px;
 
 }
 
@@ -75,7 +74,7 @@ background-color: #fff;
     margin-left: 3.5rem;
     width: 12%;
     background-color: #f8f8f8;
-
+    margin-top: 2rem;
 }
 
 .mainDiv > div:last-child{
@@ -156,6 +155,7 @@ background-color: #fff;
     padding-right: 14px;
     margin-top: 2.5rem;
     /* margin-left: 20px; */
+    cursor: pointer;
 }
 
 .desc{
@@ -164,7 +164,7 @@ background-color: #fff;
 
 .giftBox{
     border: 1px solid rgb(222, 213, 213);
-    width: 55%;
+    width: 65%;
     display: flex;
     margin-top: 2rem;
     /* justify-content: space-between; */
@@ -212,4 +212,9 @@ background-color: #fff;
     /* margin: auto; */
     text-align: center;
     width: 62%;
+   
+}
+
+.sliderDiv{
+    margin-bottom: 90px;
 }
