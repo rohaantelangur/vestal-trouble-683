@@ -16,7 +16,7 @@ export const getProductsError = () => ({
 
 export const getProducts = (params) => dispatch => {
     dispatch(getProductsRequest())
-    axios.get("/skincare", params)
+    axios.get("/", params)
     .then((res) => dispatch(getProductsSuccess(res.data)))
     .catch((err) => dispatch(getProductsError(err))) 
 }
