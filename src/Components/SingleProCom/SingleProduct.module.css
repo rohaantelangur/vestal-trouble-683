@@ -1,21 +1,63 @@
 .mainDiv{
     border: 2px solid black;
     display: flex;
-    height: 600px;
+    height: 560px;
     justify-content: space-between;
     font-family: Montserrat Light,sans-serif;
     width: 80%;
     margin: auto;
+    margin-bottom: 100px;
+}
+
+.aboutDiv{
+    border: 2px solid black;
+    font-family: Montserrat Light,sans-serif;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
+    
+
+}
+
+.productDiv > div{
+    border: 2px solid blue;
+    height: 360px;
+width: 50%;
+
+}
+
+.productDiv{
+    display: flex;
+    justify-content: space-between;
+    color: grey;
+}
+
+.productDiv > div:first-child {
+    width: 30%;
+
+}
+
+.productDiv > div:last-child {
+width: 65%;
+    
 }
 
 .mainDiv > div{
     border: 2px solid blue;
-width: 50%
+/* width: 50%; */
+background-color: #fff;
 
 }
 
 .mainDiv > div:first-child{
     margin-right: 20px;
+    margin-top: 2rem;
+}
+
+.outerdiv{
+    /* border: 2px solid red; */
+    background-color: #f8f8f8;
+
 }
 
 .info{
