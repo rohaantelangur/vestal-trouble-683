@@ -8,7 +8,7 @@ import {newArrival} from "./SliderData"
 import {tranding} from "./SliderData"
 // Import Swiper styles
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Link } from '@chakra-ui/react'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -219,7 +219,11 @@ const HomePage = () => {
 
 <div className='nav_c'><p>A refreshing, weightless gel emulsion with a matte-like finish from Augustinus Bader. This cream deeply nourishes, combats signs of ageing and targets the root cause of overactive sebum</p> </div> 
   
-<div  className='nav_b'>  <Text  as='u' href=" ">SHOP NOW</Text> </div>
+
+<Link  className='nav_b'     href= ' ' isExternal>
+    SHOP NOW
+</Link>
+
     
 </div>
 <div className="nav_2a">
@@ -233,7 +237,10 @@ const HomePage = () => {
     <div className='nav_c'> This summer is all about the outdoors, and we're here for it. You can find everything you need to make your summer outside a success in our curated collection of seasonal essentials. </div>
     
     
-    <div  className='nav_b'>  <Text  as='u' href=" ">SHOP SUMMER MUST-HAVES</Text> </div>
+    
+    <Link  className='nav_b'     href= ' ' isExternal>
+    SHOP SUMMER MUST-HAVES
+</Link>
 </div>
    
     </div>
@@ -308,9 +315,10 @@ const HomePage = () => {
       
       <div className='nav_c'><p>Whipped into a lightweight cloud-like texture, this renewing botanical face cream sinks right into the skin, delivering visible radiance. Wake up with plumper, more youthful-looking skin by morning.</p>  </div>
           
-          
+      <Link  className='nav_b'     href= ' ' isExternal>
+SHOP NOW
+</Link>
            
-           <div  className='nav_b'>  <Text  as='u' href=" ">SHOP NOW</Text> </div>
            
       </div>
       </div>
@@ -337,9 +345,11 @@ const HomePage = () => {
       </a>
       <div className='nav_c' style = {{ marginTop:20  }} ><h2>FREE GIFTS WITH PURCHASE</h2>  </div>
           <div className='nav_c' > Stock up all, then try somthing new on us</div>
+          <Link  className='nav_b'     href= ' ' isExternal>
+BROWSE NOW
+</Link>
           
           
-          <div  className='nav_b'>  <Text  as='u' href=" ">BROWSE NOW</Text> </div>
       </div>
       <div className="nav_2d">
       <a class="menu-cards" href=" "><img class='image'  style = {{ width : 380, height : 330, marginTop : 20 }}
@@ -354,7 +364,10 @@ const HomePage = () => {
           <div className='nav_c' > Stock up all , try somthing new on us</div>
           
           
-          <div  className='nav_b'>  <Text  as='u' href=" ">BOOK NOW</Text> </div>
+          
+          <Link  className='nav_b'     href= ' ' isExternal>
+BOOK NOW
+</Link>
           
       </div> 
          
@@ -373,7 +386,13 @@ const HomePage = () => {
           
     
 </div>
-<div  className='nav_b'>  <Text  as='u' href=" ">BROWSE NOW</Text> </div>
+
+
+<Link  className='nav_b'     href= ' ' isExternal>
+BROWSE NOW
+</Link>
+
+
 {/* <Text as='u'>Underline</Text> */}
   <br />
          
