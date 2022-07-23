@@ -21,12 +21,9 @@ const Header = () => {
         </div>
         <div className={style.icon}>
 
-      
-        
-
           <AiOutlineHeart />
           <BsSearch />
-          <BiUserCircle />
+         <Link to='/login'> <BiUserCircle /> </Link>
           <BsFillBagCheckFill />
 
 </div>

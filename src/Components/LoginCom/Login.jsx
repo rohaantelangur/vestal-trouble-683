@@ -61,16 +61,18 @@ export function Login() {
 
   return (
     <Flex
-      minH={"100vh"}
+      minH={"80vh"}
       align={"center"}
       justify={"center"}
       // bg={useColorModeValue("gray.50", "gray.800")}
       // border={"2px solid black"}
+      // border={"2px solid red"}
     >
       <Stack
         spacing={8}
         mx={"auto"}
         maxW={"lg"}
+      align={"center"}
         // py={12}
         // px={20}
         // border={"2px solid black"}

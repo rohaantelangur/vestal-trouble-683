@@ -58,7 +58,6 @@ padding-top: 2.5rem;
 .mainDiv > div{
     border: 2px solid blue;
 width: 50%;
-background-color: #fff;
 
 }
 
@@ -67,6 +66,8 @@ background-color: #fff;
     margin-top: 2rem;
     align-items: center;
     padding-left: 3rem;
+background-color: #fff;
+
 }
 
 .mainDiv > div:first-child{
@@ -74,6 +75,13 @@ background-color: #fff;
     align-items: center;
     margin-left: 3.5rem;
     width: 12%;
+    background-color: #f8f8f8;
+
+}
+
+.mainDiv > div:last-child{
+    background-color: #fff;
+
 }
 
 .mainDiv > div:first-child > div{
@@ -99,9 +107,6 @@ background-color: #fff;
 .info{
     padding-left: 2rem;
     padding-top: 3rem;
-
-    border: 2px solid red;
-
 }
 
 .img{
@@ -189,9 +194,10 @@ background-color: #fff;
     max-height: 70px; */
     object-fit: cover;
     cursor: pointer;
+    margin-bottom: 2rem;
     /* opacity: 0.5; */
     /* margin: 5px; */
-    border: 2px solid rgb(184, 177, 177);
+    /* border: 2px solid rgb(184, 177, 177); */
 }
 
 .thumbnail:hover{
