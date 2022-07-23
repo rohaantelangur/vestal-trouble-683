@@ -7,29 +7,16 @@ import axios from 'axios';
 
 export const SingleProduct = () => {
 
-  const {id} = useParams();
+  const { id } = useParams();
   const { category } = useParams();
-  const product = useSelector((state) => state.Appreducer.products);
-  console.log('product:', product)
+  // const product = useSelector((state) => state.Appreducer.products);
+  // console.log('product:', product)
   const [currentProduct, setProduct] = useState({});
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if(product?.length === 0) {
-      dispatch(getProducts());
-    }
-  }, [product?.length, dispatch])
-
-  useEffect(() => {
-    // if(id) {
-    //   const temp = product?.find((item)=>item.category === category).find((item) => item.id === Number(id))
-    //   temp && setProduct(temp) 
-    // }
-  }, [product, id, category])
+  // const dispatch = useDispatch();
+  console.log(category,id,currentProduct.images[0].src);
 
   useEffect(()=>{
     axios.get(`http://localhost:8080/${category}/${id}`).then((res)=>{
-      console.log(res.data);
       setProduct(res.data)
     }).catch((err)=>{
       console.log(err);
@@ -39,9 +26,8 @@ export const SingleProduct = () => {
   return (
     <div className={style.mainDiv}>
         <div>
-          <img src={currentProduct.images[0].src} alt="" />
+          <img src={`https://www.${currentProduct.images[0].src}`} alt="" />
         </div>
-
         <div></div>
     </div>
   )

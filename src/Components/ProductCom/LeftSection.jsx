@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, SearchIcon } from "@chakra-ui/icons";
 import { Filter } from "./FillterData";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
 
@@ -24,6 +24,8 @@ export const LeftSection = () => {
   const Fillter = useSelector((store)=>store.Fillters.Fillter)
 
   const dispatch = useDispatch();
+  const {category} = useParams();
+
 
   const handleAddFilter = (category) =>{
 
@@ -50,10 +52,8 @@ export const LeftSection = () => {
   },[])
 
   return (
-    <Box mt={5} w="25%">
-      <Heading size="sm" mt={5} >
-        MAKEUP CATEGORY
-      </Heading>
+    <Box mt={5} w="25%" color={"#657fa1"}>
+      <Heading size="sm" mt={5} textTransform={"uppercase"}>{category} CATEGORY</Heading>
       <Text mb={1} fontSize="xs" color={"#dbdee4"}>
         Select One to narrow results
       </Text>
@@ -85,18 +85,18 @@ export const LeftSection = () => {
       <Text mb={5} fontSize="md" color={"#929aa9"}>
         Palettes & Sets
       </Text>
-      <Heading size="sm" mb={2}>FILTER MAKEUP BY</Heading>
+      <Heading size="sm" mb={2}>FILTER BY</Heading>
 
       <Accordion allowToggle>
         {Filter.map((obj,index) => (
           <AccordionItem key={index}>
             <h2>
               <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  <Text fontSize="lg">{obj.Name}</Text>
-                  <Text fontSize="xs">{obj.subtitle}</Text>
+                <Box flex="1" textAlign="left" colorScheme={"#657fa1"}>
+                  <Text fontSize="lg" color={"#657fa1"}>{obj.Name}</Text>
+                  <Text fontSize="xs" color={"#657fa1"}>{obj.subtitle}</Text>
                 </Box>
-                <AddIcon />
+                <AddIcon style={{color:"#657fa1", fontSize:"15px"}} />
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
@@ -119,9 +119,10 @@ export const LeftSection = () => {
                 }}
               >
                 {obj.Sub.map((item, index) => (
-                  <Checkbox
+                  <Checkbox 
+                  color={"#657fa1"}
                   defaultChecked={Fillter?.includes(item)? true : false} 
-                  colorScheme="gray" size="lg" key={index} 
+                  colorScheme="#657fa1" size="lg" key={index} 
                   onChange={() => handleAddFilter(item)}
                   >
                     {item}

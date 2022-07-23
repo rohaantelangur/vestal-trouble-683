@@ -81,10 +81,10 @@ export const RightSection = () => {
   
 
   return (
-    <Box w="72%">
+    <Box w="72%" color={"#657fa1"}>
       <Box borderBottom={"1px solid"} h={"82px"}>
         <Stack direction="row" justifyContent={"space-between"}>
-          <Heading>{category}</Heading>
+          <Heading textTransform={"uppercase"}>{category}</Heading>
           <Stack direction={"row"} align="center" pt={"5"}>
             <Heading size={"md"}>SORT BY</Heading>
             <Stack spacing={3}>
@@ -98,7 +98,7 @@ export const RightSection = () => {
         </Stack>
       </Box>
 
-      <Stack direction="row" justifyContent="space-between" mt="2" mb={5}>
+      <Stack direction="row" justifyContent="space-between" mt="2" mb={5} >
         <Heading size={"sm"}>{Fillter.length} FILTERS APPLIED</Heading>
         <Stack direction="row" align="center" gap="10px">
           <Text fontSize="sm" color={"#888c92"}>
@@ -110,7 +110,7 @@ export const RightSection = () => {
           </Text>
         </Stack>
       </Stack>
-      <Box my={2}>
+      <Box my={2} >
         {Fillter?.map((item, index)=>(
          <Tag
          m={2}
