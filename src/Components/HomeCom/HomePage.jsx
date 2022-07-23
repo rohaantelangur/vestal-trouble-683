@@ -368,7 +368,9 @@ const HomePage = () => {
           
     
 </div>
-<div  className='nav_b'>  <a href=" ">BROWSE NOW</a> </div>
+<div  className='nav_b'>  <Text  as='u' href=" ">BROWSE NOW</Text> </div>
+{/* <Text as='u'>Underline</Text> */}
+  <br />
          
           </div>
 </div>
