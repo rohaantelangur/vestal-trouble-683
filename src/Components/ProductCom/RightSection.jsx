@@ -17,7 +17,6 @@ import { ProductCard } from "./ProductCard";
 import axios from "axios"
 
 import { Link, useSearchParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
 
