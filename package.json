@@ -25,10 +25,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
-<<<<<<< HEAD
-=======
     "redux-thunk": "^2.4.1",
->>>>>>> 8b64fe83020158fee8640225b547254a354ce9e0
     "swiper": "^8.3.1",
     "web-vitals": "^2.1.4"
   },
