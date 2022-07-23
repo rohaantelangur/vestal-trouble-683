@@ -25,9 +25,9 @@ const Header = () => {
           <AiOutlineHeart />
           <BsSearch />
          <Link to='/login'> <BiUserCircle /> </Link>
-          <BsFillBagCheckFill />
+          {/* <BsFillBagCheckFill /> */}
 
-          <BiUserCircle />
+          {/* <BiUserCircle /> */}
           {/* <BsFillBagCheckFill /> */}
 <Samplecart />
 </div>
