@@ -1,11 +1,3 @@
-// import { styled } from '@chakra-ui/react'
-// import React from 'react';
-
-// export const Signup = () => {
-//   return (
-//     <div className={style.container}>
-//         <h1>CREATE ACCOUNT</h1>
-//         <p>Complete the form below to create a bluemercury.com account.</p>
 
 import {
   Flex,
@@ -87,7 +79,7 @@ export function Signup() {
       className={style.container}
     >
       <Stack
-        border={"2px solid blue"}
+        // border={"2px solid blue"}
         spacing={8}
         mx={"auto"}
         maxW={"lg"}

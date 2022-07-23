@@ -22,11 +22,11 @@ const Header = () => {
         </div>
         <div className={style.icon}>
 
-      
-        
-
           <AiOutlineHeart />
           <BsSearch />
+         <Link to='/login'> <BiUserCircle /> </Link>
+          <BsFillBagCheckFill />
+
           <BiUserCircle />
           {/* <BsFillBagCheckFill /> */}
 <Samplecart />
