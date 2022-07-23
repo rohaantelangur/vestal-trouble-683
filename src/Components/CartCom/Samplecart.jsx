@@ -58,8 +58,9 @@ const unique = AddtoCart.filter(element => {
   
   let totalPrice=0
   return (
-    <Box   fontFamily="Montserrat Semi Bold" mt={"-4"} mr={3}>
-    <Button  onClick={() => handleClick("md")} key={"md"} m={4} variant={"ghost"}   _hover={{
+    <Box ml="">
+    <Box   fontFamily="Montserrat Semi Bold" >
+    <Button fontWeight={400}  onClick={() => handleClick("md")} key={"md"}  variant={"ghost"}   _hover={{
           
            variant:"ghost",
          
@@ -68,6 +69,7 @@ const unique = AddtoCart.filter(element => {
      <BagIcon  />
         
      <Box
+
         pos={"absolute"}
         top="4"
         left={"24px"}
@@ -78,7 +80,7 @@ const unique = AddtoCart.filter(element => {
         {AddtoCart?.length}
         </Text>
       </Box>
-          BAG
+           BAG
     </Button>
     <Drawer onClose={onClose} isOpen={isOpen} size={"md"} bgColor="#f8f8f8">
       <DrawerOverlay />
@@ -88,7 +90,7 @@ const unique = AddtoCart.filter(element => {
         <Box borderBottom={"0.1px solid gray"}></Box>
         <DrawerBody bgColor="#f8f8f8"  >
           <Box mt="2">
-            <Text color="#61789c" fontFamily="Montserrat Semi Bold, sans-serif" fontWeight="600" fontSize={"11"}>FREE RETURNS ON ALL ORDERS</Text>
+            <Text color="#61789c" fontFamily={`"Montserrat Semi Bold", sans-serif`} fontWeight="700" fontSize={"11"}>FREE RETURNS ON ALL ORDERS</Text>
           </Box>
           <Box mt="2">
               {
@@ -122,6 +124,7 @@ const unique = AddtoCart.filter(element => {
         </DrawerBody>
       </DrawerContent>
     </Drawer>
+  </Box>
   </Box>
   )
 }

@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Page/Home";
 import Header from "./Components/HeaderCom/Header";
-import Footer from "./Components/FooterCom/Footer";
+
 import Products from "./Page/Products";
 
 import { MainCartBag } from "./Components/CartCom/MainCartBag";
@@ -13,6 +13,8 @@ import { CheckOutPage } from "./Components/CheckOutCom/CheckOutPage";
 
 
 import { SingleProduct } from "./Components/SingleProCom/SingleProduct";
+import Footer from "./Components/FooterCom/FooterComponent";
+
 
 
 function App() {
@@ -28,7 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/checkout" element={<CheckOutPage />} />
       </Routes>
-      
+<Footer />
     </>
   );
 }
