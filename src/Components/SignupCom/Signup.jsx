@@ -72,10 +72,10 @@ export function Signup() {
 
   return (
     <Flex
-      minH={"100vh"}
+      minH={"80vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      // bg={useColorModeValue("gray.50", "gray.800")}
       className={style.container}
     >
       <Stack
