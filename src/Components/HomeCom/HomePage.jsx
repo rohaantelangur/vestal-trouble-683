@@ -52,7 +52,7 @@ const HomePage = () => {
 
  <Box h="350px"  mb="20">
   <div className='nav_e' >
-  <h2>NEW ARRIVALS</h2>
+  <h2>NEW ARRIVAL</h2>
   </div>
   
       
