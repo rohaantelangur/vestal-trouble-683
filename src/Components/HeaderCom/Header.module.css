@@ -26,9 +26,10 @@
   display: flex;
   /* border: 2px solid rgb(223, 143, 156); */
   justify-content: space-between;
-  width: 180px;
+  /* width: 180px; */
   font-size: 25px;
   align-items: center;
+  gap:10px
 }
 .navTitle{
     /* border: 2px solid red; */
