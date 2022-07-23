@@ -28,7 +28,7 @@ export const SingleProduct = () => {
   return (
     <div className={style.mainDiv}>
         <div>
-          <img src={currentProduct.images[0].src} alt="" />
+          <img src={currentProduct?.images[0].src} alt="" />
         </div>
 
         <div></div>
