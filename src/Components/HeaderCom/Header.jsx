@@ -10,6 +10,7 @@ import { BiUserCircle } from "react-icons/bi";
 
 import style from "./Header.module.css";
 import { Link } from "react-router-dom";
+import { Samplecart } from "../CartCom/Samplecart";
 
 const Header = () => {
   return (
@@ -27,10 +28,10 @@ const Header = () => {
           <AiOutlineHeart />
           <BsSearch />
           <BiUserCircle />
-          <BsFillBagCheckFill />
-
-</div>
-          {/* <Samplecart /> */}
+          {/* <BsFillBagCheckFill /> */}
+<Samplecart />
+{/* </div> */}
+          
         </div>
       </div>
       <div className={style.icons}>
