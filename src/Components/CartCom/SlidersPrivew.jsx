@@ -16,7 +16,7 @@ import { Pagination, Navigation } from "swiper";
 export const SlidersPrivew = () => {
     
   return (
-    <Box h="350px" mt="20" mb="10" fontFamily={`"Montserrat Regular",sans-serif`} color="#12284C">
+    <Box h="400px" mt="20" mb="10" fontFamily={`"Montserrat Regular",sans-serif`} color="#12284C">
       <Stack ml={"40%"}>
 
       <Heading size={"md"}letterSpacing="2px"  fontSize="24px" fontWeight={400} p="10">SIMILAR PRODUCTS</Heading>
