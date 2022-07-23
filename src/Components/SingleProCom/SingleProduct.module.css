@@ -1,5 +1,5 @@
 .mainDiv{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     height: 560px;
     justify-content: space-around;
@@ -13,7 +13,7 @@
 }
 
 .aboutDiv{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-family: Montserrat Light,sans-serif;
     width: 80%;
     margin: auto;
@@ -23,10 +23,9 @@
 }
 
 .productDiv > div{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     height: 360px;
-width: 50%;
-
+    width: 50%;
 }
 
 .productDiv{
@@ -56,7 +55,7 @@ padding-top: 2.5rem;
 }
 
 .mainDiv > div{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 width: 50%;
 background-color: #fff;
 
@@ -87,8 +86,7 @@ background-color: #fff;
 .info{
     padding-left: 2rem;
     padding-top: 5rem;
-
-    border: 2px solid red;
+    /* border: 2px solid red; */
 
 }
 

@@ -10,6 +10,7 @@ import { AiFillStar, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { ADD_TO_WISH_LIST_SUCCESS } from "../../Redux/WishListReducer/actionType";
+import { OuickView } from "./OuickView";
 
 export const ProductCard = (props) => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export const ProductCard = (props) => {
     dispatch({type:ADD_TO_WISH_LIST_SUCCESS, payload})
   }
   return (
-    <Box>
+    <Box  py={2}>
       <Box mt={1} align="right">
         <Box w="30px" h="30px" mr={1} align="center" onClick={()=>AddToFevrate()} cursor={"pointer"}>
           {ProId.includes(props.item.id)?
@@ -43,8 +44,10 @@ export const ProductCard = (props) => {
           }
         </Box>
       </Box>
-      <Link to={`/${props.category}/${props.item.id}`}>
+      <Link
+       to={`/${props.category}/${props.item.id}`}>
       <Img
+        id="ImageClass"
         cursor={"pointer"}
         src={props.item.images[0].src}
         w="100%"
@@ -53,17 +56,15 @@ export const ProductCard = (props) => {
         srcSet=""
         />
         </Link>
-      <Box align="center" mt={"-10"}>
-        <Button borderRadius={0} w="98%" variant='outline'>
-          Queck View
-        </Button>
-        <Text fontSize={"lg"} fontWeight={"600"}>
+      <Box align="center" mt={"-5"}>
+        <OuickView item={props.item}/>
+        <Text noOfLines={1} fontSize={"lg"} fontWeight={"600"}>
         {props.item.type}
         </Text>
-        <Text fontSize={"md"} fontWeight={"200"}>
+        <Text noOfLines={1} fontSize={"md"} fontWeight={"200"}>
         {props.item.title}
         </Text>
-        <Text fontSize={"md"} fontWeight={"600"}>
+        <Text noOfLines={1} fontSize={"md"} fontWeight={"600"}>
         ₹ {props.item.price}
         </Text>
         <Stack direction={"row"} justify="center">
