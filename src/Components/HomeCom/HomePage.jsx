@@ -50,8 +50,8 @@ const HomePage = () => {
  {/* First coursal------------------------------------------------------- */}
 
 
- <Box h="350px"  mb="10">
-  <div className='nav_e' style={{marginBottom:10 } }>
+ <Box h="350px"  mb="20">
+  <div className='nav_e' >
   <h2>NEW ARRIVALS</h2>
   </div>
   
