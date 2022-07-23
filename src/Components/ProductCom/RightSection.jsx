@@ -15,8 +15,12 @@ import {
 import { Pagination } from "./Pagination";
 import { ProductCard } from "./ProductCard";
 import axios from "axios"
+
+import { Link, useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
+
 
 export const RightSection = () => {
   const Fillter = useSelector((store)=>store.Fillters.Fillter)
@@ -126,7 +130,7 @@ export const RightSection = () => {
       <Grid templateColumns="repeat(4, 1fr)" gap={5} >
         {products?.map((item, index)=>(
         <GridItem w="100%" h="350" key={index}>
-            <ProductCard item={item}/>
+           <Link to={`/products/${item.id}`}> <ProductCard item={item}/> </Link> 
         </GridItem>
           ))}
       </Grid>
