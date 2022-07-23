@@ -187,11 +187,13 @@ margin: auto;
   margin-left: 2%;
 }
 .nav_b{
-  font-size:larger
+  font-size:larger;
+  color: #12294f ;
 }
 .nav_e{
   font-size: xx-large;
   text-align: center;
+  color:#12294f ;
 }
 .nav_c{
   font-size: medium;
