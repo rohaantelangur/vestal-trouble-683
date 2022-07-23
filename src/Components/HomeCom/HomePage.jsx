@@ -349,7 +349,8 @@ const HomePage = () => {
       
           <div className='nav_c' > Stock up all , try somthing new on us</div>
           
-          <div  className='nav_b'>  <a href=" ">BOOK NOW</a> </div>
+          
+          <div  className='nav_b'>  <Text  as='u' href=" ">BOOK NOW</Text> </div>
           
       </div> 
          
