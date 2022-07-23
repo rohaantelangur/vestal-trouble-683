@@ -30,7 +30,7 @@ const Header = () => {
           <BiUserCircle />
           {/* <BsFillBagCheckFill /> */}
 <Samplecart />
-{/* </div> */}
+</div>
           
         </div>
       
@@ -510,6 +510,7 @@ const Header = () => {
         </header>
       </div>
     </div>
+    
     
   );
 };
