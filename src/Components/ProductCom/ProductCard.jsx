@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { AiFillStar, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { ADD_TO_WISH_LIST_SUCCESS } from "../../Redux/WishListReducer/actionType";
 
 export const ProductCard = (props) => {
@@ -42,6 +43,7 @@ export const ProductCard = (props) => {
           }
         </Box>
       </Box>
+      <Link to={`/${props.category}/${props.item.id}`}>
       <Img
         cursor={"pointer"}
         src={props.item.images[0].src}
@@ -49,7 +51,8 @@ export const ProductCard = (props) => {
         h="200px"
         alt=""
         srcSet=""
-      />
+        />
+        </Link>
       <Box align="center" mt={"-10"}>
         <Button borderRadius={0} w="98%" variant='outline'>
           Queck View
