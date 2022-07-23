@@ -16,7 +16,7 @@ export const SingleProduct = () => {
 
   useEffect(() => {
     if(product?.length === 0) {
-      dispatch(getProducts());
+      // dispatch(getProducts());
     }
   }, [product?.length, dispatch])
 
@@ -28,21 +28,41 @@ export const SingleProduct = () => {
   }, [product, id, category])
 
   useEffect(()=>{
+    if(category,id)
+    {
     axios.get(`http://localhost:8080/${category}/${id}`).then((res)=>{
-      console.log(res.data);
+      console.log("data", res.data);
       setProduct(res.data)
     }).catch((err)=>{
       console.log(err);
     })
-
-  },[])
+  }
+  }, [category,id])
+  // }, [category, id])
+  // https://cdn.shopify.com/s/files/1/0283/0185/2747/products/global_images-5060445300023-1.jpg?v=1656523237
+  // currentProduct.images[0]?.src
   return (
     <div className={style.mainDiv}>
         <div>
-          <img src={currentProduct.images[0].src} alt="" />
+          {/* <img  className={style.img} src={`https:${currentProduct.images[0]?.src}`} alt="" /> */}
         </div>
 
-        <div></div>
+        <div className={style.info}>
+           <h2 className={style.type}>{currentProduct.type}</h2>
+           
+           <h1 className={style.title}>{currentProduct.title}</h1>
+           <p className={style.sell}>BEST SELLER CONCIOUS BEAUTY</p>
+           <span style={{fontWeight: "bold", fontSize: "22px"}}>₹ {currentProduct.price}  </span>
+           <span  className={style.text}>4 interest-free payments of $20.50 with Klarna.</span>
+           <div className={style.btnDiv}>
+           
+               <div className={style.btn}>ADD TO BAG </div>
+           
+            <div>
+              <p> ₹ {currentProduct.price} </p>
+            </div>
+           </div>
+        </div>
     </div>
   )
 }
