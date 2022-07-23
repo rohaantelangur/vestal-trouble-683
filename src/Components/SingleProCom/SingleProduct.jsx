@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import style from "./SingleProduct.module.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { getProducts } from '../../Redux/AppReducer/action';
+import axios from 'axios';
 
 export const SingleProduct = () => {
 
   const {id} = useParams();
+  const { category } = useParams();
   const product = useSelector((state) => state.Appreducer.products);
   console.log('product:', product)
   const [currentProduct, setProduct] = useState({});
@@ -19,12 +21,21 @@ export const SingleProduct = () => {
   }, [product?.length, dispatch])
 
   useEffect(() => {
-    if(id) {
-      const temp = product?.find((item) => item.id === Number(id))
-      temp && setProduct(temp) 
-    }
-  }, [product, id])
+    // if(id) {
+    //   const temp = product?.find((item)=>item.category === category).find((item) => item.id === Number(id))
+    //   temp && setProduct(temp) 
+    // }
+  }, [product, id, category])
 
+  useEffect(()=>{
+    axios.get(`http://localhost:8080/${category}/${id}`).then((res)=>{
+      console.log(res.data);
+      setProduct(res.data)
+    }).catch((err)=>{
+      console.log(err);
+    })
+
+  },[])
   return (
     <div className={style.mainDiv}>
         <div>

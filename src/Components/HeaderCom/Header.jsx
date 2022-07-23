@@ -7,13 +7,14 @@ import { BsSearch } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
 
 import style from "./Header.module.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className={style.mainDiv}>
       <div className={style.icons} id={style.headericons}>
         <div>
-         <GoLocation style={{ fontSize: "25px" }} />
+          <GoLocation style={{ fontSize: "25px" }} />
           {/* <span color="#12284c" fontSize="10px">STORE & SPA LOCATOR</span> */}
         </div>
         <div className={style.icon}>
@@ -43,27 +44,48 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_one}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      SKIN CARE
-                    </h4>
-                    <li>MAKEUP</li>
+                    <h4 className={style.subHead}>SKIN CARE</h4>
+                    <Link to="/makeup">
+                      <li>MAKEUP</li>
+                    </Link>
+                    <Link to="/skincare">
+                    <li>SKINCARE</li>
+                    </Link>
+                    <Link to="/hair">
                     <li>HAIR</li>
-                    <li>BATH & BODY</li>
-                    <li>FRAGRANCE</li>
+                    </Link>
+                    <Link to="/Bodycare">
+                    <li>BODY CARE</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>TOOLS & ACCESSORIES</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>HOME & LIFESTYLE</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>SUN CARE</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>MEN</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>GIFTS</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>BEST SELLERS</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>WELLNESS</li>
+                    </Link>
+                    <Link to="/MAKEUP">
                     <li>FREE GIFTS</li>
+                    </Link>
+
                   </ul>
-                {/* <div className={style.icons}> */}
+                  {/* <div className={style.icons}> */}
                   <ul className={style.menu1_ul}>
-                    <h4  className={style.subHead}>
-                      BY CATEGORY
-                    </h4>
+                    <h4 className={style.subHead}>BY CATEGORY</h4>
                     <li>Shop All</li>
                     <li>Cleansers</li>
                     <li>Exfoliators & Peels</li>
@@ -79,9 +101,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY BRAND
-                    </h4>
+                    <h4 className={style.subHead}>BY BRAND</h4>
                     <li>111Skin</li>
                     <li>Augustinus Bader</li>
                     <li>Dr. barbara Strum</li>
@@ -120,9 +140,7 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_two}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY CATEGORY
-                    </h4>
+                    <h4 className={style.subHead}>BY CATEGORY</h4>
                     <li>Shop All</li>
                     <li>SkinCare</li>
                     <li>Makeup</li>
@@ -151,9 +169,7 @@ const Header = () => {
                       src="https://cdn.shopify.com/s/files/1/0283/0185/2747/files/vaction_edit_303x303.jpg?v=1655303891"
                       alt="m-61 peel pac"
                     />
-                    <h4 className={style.subHead}>
-                      The Vacation Edit
-                    </h4>
+                    <h4 className={style.subHead}>The Vacation Edit</h4>
                     <p>$350+ worth of summer essentials for $99!</p>
                   </ul>
                 </div>
@@ -167,9 +183,7 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_three}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      SKIN CARE
-                    </h4>
+                    <h4 className={style.subHead}>SKIN CARE</h4>
                     <li>MAKEUP</li>
                     <li>HAIR</li>
                     <li>BATH & BODY</li>
@@ -185,9 +199,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY CATEGORY
-                    </h4>
+                    <h4 className={style.subHead}>BY CATEGORY</h4>
                     <li>Shop All</li>
                     <li>Cleansers</li>
                     <li>Exfoliators & Peels</li>
@@ -203,9 +215,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY BRAND
-                    </h4>
+                    <h4 className={style.subHead}>BY BRAND</h4>
                     <li>111Skin</li>
                     <li>Augustinus Bader</li>
                     <li>Dr. barbara Strum</li>
@@ -244,9 +254,7 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_four}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      SKIN CARE
-                    </h4>
+                    <h4 className={style.subHead}>SKIN CARE</h4>
                     <li>MAKEUP</li>
                     <li>HAIR</li>
                     <li>BATH & BODY</li>
@@ -262,9 +270,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY CATEGORY
-                    </h4>
+                    <h4 className={style.subHead}>BY CATEGORY</h4>
                     <li>Shop All</li>
                     <li>Cleansers</li>
                     <li>Exfoliators & Peels</li>
@@ -280,9 +286,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY BRAND
-                    </h4>
+                    <h4 className={style.subHead}>BY BRAND</h4>
                     <li>111Skin</li>
                     <li>Augustinus Bader</li>
                     <li>Dr. barbara Strum</li>
@@ -321,9 +325,7 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_five}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      SKIN CARE
-                    </h4>
+                    <h4 className={style.subHead}>SKIN CARE</h4>
                     <li>MAKEUP</li>
                     <li>HAIR</li>
                     <li>BATH & BODY</li>
@@ -339,9 +341,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY CATEGORY
-                    </h4>
+                    <h4 className={style.subHead}>BY CATEGORY</h4>
                     <li>Shop All</li>
                     <li>Cleansers</li>
                     <li>Exfoliators & Peels</li>
@@ -357,9 +357,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY BRAND
-                    </h4>
+                    <h4 className={style.subHead}>BY BRAND</h4>
                     <li>111Skin</li>
                     <li>Augustinus Bader</li>
                     <li>Dr. barbara Strum</li>
@@ -398,9 +396,7 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_six}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      SKIN CARE
-                    </h4>
+                    <h4 className={style.subHead}>SKIN CARE</h4>
                     <li>MAKEUP</li>
                     <li>HAIR</li>
                     <li>BATH & BODY</li>
@@ -416,9 +412,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY BRAND
-                    </h4>
+                    <h4 className={style.subHead}>BY BRAND</h4>
                     <li>111Skin</li>
                     <li>Augustinus Bader</li>
                     <li>Dr. barbara Strum</li>
@@ -457,9 +451,7 @@ const Header = () => {
                 {/* Visible on hover */}
                 <div className={style.menu_seven}>
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      SKIN CARE
-                    </h4>
+                    <h4 className={style.subHead}>SKIN CARE</h4>
                     <li>MAKEUP</li>
                     <li>HAIR</li>
                     <li>BATH & BODY</li>
@@ -475,9 +467,7 @@ const Header = () => {
                   </ul>
 
                   <ul className={style.menu1_ul}>
-                    <h4 className={style.subHead}>
-                      BY CATEGORY
-                    </h4>
+                    <h4 className={style.subHead}>BY CATEGORY</h4>
                     <li>Shop All</li>
                     <li>Cleansers</li>
                     <li>Exfoliators & Peels</li>

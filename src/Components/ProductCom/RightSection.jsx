@@ -16,9 +16,8 @@ import { Pagination } from "./Pagination";
 import { ProductCard } from "./ProductCard";
 import axios from "axios"
 
-import { Link, useSearchParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { ADD_FILLTER } from "../../Redux/FillterReducer/actionType";
 
 
@@ -28,6 +27,7 @@ export const RightSection = () => {
   const [products, setproducts] = useState([])
   const [sort, setsort] = useState("")
   const dispatch = useDispatch();
+  const {category} = useParams()
   
   const HandleSort =(str) =>{
     switch (str) {
@@ -68,7 +68,7 @@ export const RightSection = () => {
   }
 
   const FetchDataFromServer = () =>{
-    axios.get(`http://localhost:8080/skincare?_page=${curretpage}&_limit=50`).then((res)=>{
+    axios.get(`http://localhost:8080/${category}?_page=${curretpage}&_limit=50`).then((res)=>{
       console.log(res.data);
       setproducts(res.data)
     }).catch((err)=>{
@@ -84,7 +84,7 @@ export const RightSection = () => {
     <Box w="72%">
       <Box borderBottom={"1px solid"} h={"82px"}>
         <Stack direction="row" justifyContent={"space-between"}>
-          <Heading>MAKEUP</Heading>
+          <Heading>{category}</Heading>
           <Stack direction={"row"} align="center" pt={"5"}>
             <Heading size={"md"}>SORT BY</Heading>
             <Stack spacing={3}>
@@ -130,7 +130,7 @@ export const RightSection = () => {
       <Grid templateColumns="repeat(4, 1fr)" gap={5} >
         {products?.map((item, index)=>(
         <GridItem w="100%" h="350" key={index}>
-           <Link to={`/products/${item.id}`}> <ProductCard item={item}/> </Link> 
+           <ProductCard item={item} category={category}/> 
         </GridItem>
           ))}
       </Grid>
