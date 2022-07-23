@@ -152,6 +152,7 @@ text-align: center;
 .nav_1c{
   width: 56%;
   height: 500px;
+  margin-left: 2%;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   /* margin: auto; */
   
@@ -163,4 +164,37 @@ text-align: center;
   margin-left: 3%;
   /* margin: auto; */
 }
+
+/* last-line---------------------------------------------------------------- */
+
+
+.main_4b{
+  display: flex;
+  /* background-color: aqua; */
+  width: 90%;
+  height: 580px;
+margin: auto;
+
+}
+.nav_1d{
+  margin-left: 2%;
+}
+.nav_2d{
+  margin-left: 2%;
+}
+.nav_3d{
+  margin-left: 2%;
+}
+.nav_b{
+  font-size:larger
+}
+.nav_e{
+  font-size: xx-large;
+  text-align: center;
+}
+.nav_c{
+  font-size: medium;
+}
+
+
 
