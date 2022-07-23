@@ -62,11 +62,23 @@ background-color: #fff;
 
 }
 
-.mainDiv > div:first-child{
+.imgDiv{
     margin-right: 20px;
     margin-top: 2rem;
     align-items: center;
     padding-left: 3rem;
+}
+
+.mainDiv > div:first-child{
+    margin-right: 20px;
+    align-items: center;
+    margin-left: 3.5rem;
+    width: 12%;
+}
+
+.mainDiv > div:first-child > div{
+    /* border: 2px solid green; */
+    margin-bottom: 1rem;
 }
 
 .outerdiv{
@@ -86,7 +98,7 @@ background-color: #fff;
 
 .info{
     padding-left: 2rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
 
     border: 2px solid red;
 
@@ -145,15 +157,12 @@ background-color: #fff;
 
 .giftBox{
     border: 1px solid rgb(222, 213, 213);
-    width: 45%;
+    width: 55%;
     display: flex;
     margin-top: 2rem;
     /* justify-content: space-between; */
 }
 
-.giftBox > div {
-    /* border: 2px solid black; */
-}
 
 .giftBox > div:first-child {
    margin-right: 7px;
@@ -167,7 +176,36 @@ background-color: #fff;
     height: 60px;
 }
 
-.giftBox > div:last-child {
-    /* width: 30% */
+#featured{
+    /* max-width: 500px;
+    max-height: 600px; */
+    object-fit: cover;
+    cursor: pointer;
+    /* border: 2px solid black; */
+}
 
+.thumbnail{
+    /* max-width: 150px;
+    max-height: 70px; */
+    object-fit: cover;
+    cursor: pointer;
+    /* opacity: 0.5; */
+    /* margin: 5px; */
+    border: 2px solid rgb(184, 177, 177);
+}
+
+.thumbnail:hover{
+    opacity: 1;
+}
+
+.active{
+    /* opacity: 1; */
+
+}
+
+#thumbnail-image{
+    /* border: 1px solid black; */
+    /* margin: auto; */
+    text-align: center;
+    width: 62%;
 }

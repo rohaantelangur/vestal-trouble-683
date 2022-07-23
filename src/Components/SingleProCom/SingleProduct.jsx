@@ -32,8 +32,20 @@ export const SingleProduct = () => {
   return (
     <div className={style.outerdiv}>
       <div className={style.mainDiv}>
+      <div className={style.thumbnail} id="thumbnail-image">
         <div>
-          <img className={style.img} src={currentImage1} alt="" />
+          {/* <img src={currentImage1} alt="" /> */}
+          <img className={style.thumbnail}  id="main-img" src={currentImage1} alt="" />
+
+        </div>
+        <div>
+          <img className={style.thumbnail} id="main-img-1"  src={currentImage2} alt="" />
+        </div>
+      </div>
+
+        <div className={style.imgDiv}>
+        <img id={style.featured} className={style.img}  src={currentImage1} alt="" />
+
         </div>
 
         <div className={style.info}>
