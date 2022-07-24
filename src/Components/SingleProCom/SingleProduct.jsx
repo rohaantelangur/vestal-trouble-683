@@ -117,9 +117,9 @@ addtocart(
 
           <div className={style.btnDiv}>
            
-{isLoading?           <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
-:           <Button variant={"ghosht"} m="auto" > <Spinner size='xs' /></Button>
-}
+        <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
+         
+
             <div>
               <p>  </p>
             </div>
