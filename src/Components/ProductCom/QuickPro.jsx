@@ -11,12 +11,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AiFillStar, AiTwotoneHeart } from "react-icons/ai";
 import {GrFormAdd, GrSubtract} from "react-icons/gr"
 
 
 export const QuickPro = (props) => {
+  const {category} = useParams()
   return (
     <Box >
       <Stack direction={"row"}>
@@ -85,7 +86,7 @@ export const QuickPro = (props) => {
         </Box>
       </Stack>
       <Center>
-        <Link to={`/${props.category}/${props.item.id}`}>
+        <Link to={`/${category}/${props.item.id}`}>
           <Text fontSize={"lg"} fontWeight={"600"}>
             VIEW FULL DETAILS
           </Text>
