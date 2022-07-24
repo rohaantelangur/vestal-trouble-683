@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./SingleProduct.module.css";
 import axios from "axios";
-import { Box, Button, Image, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Img, Spinner, Text } from "@chakra-ui/react";
 import { ProductAbout } from "./ProductAbout";
 import { SliderComponent } from "./SliderComponent";
 import { addtocart, getCart } from "../../Redux/CartReducer/action";
 import { useDispatch } from "react-redux";
 
+
 export const SingleProduct = () => {
+  
+  const [isLoading,setIsloading]=useState(true)
   const { id } = useParams();
   const { category } = useParams();
   const [currentProduct, setcurrentProduct] = useState({});
@@ -35,8 +38,12 @@ export const SingleProduct = () => {
   }, []);
   
   const dispatch=useDispatch()
+  
+
 const handdleSubmit=()=>
 {
+ 
+
 addtocart(
   {currentProduct,
     dispatch}
@@ -110,8 +117,10 @@ addtocart(
           </div>
 
           <div className={style.btnDiv}>
-           <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
-
+           
+{isLoading?           <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
+:           <Button variant={"ghosht"} m="auto" > <Spinner size='xs' /></Button>
+}
             <div>
               <p>  </p>
             </div>
