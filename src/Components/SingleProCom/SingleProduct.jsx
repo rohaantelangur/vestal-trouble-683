@@ -64,8 +64,7 @@ export const SingleProduct = () => {
         </div>
 
         <div className={style.imgDiv}>
-        
-          <img id={style.featured} className={style.img}  src={activeImage} alt="" />
+          <img id={style.featured} className={style.img} src={activeImage} alt="" />
         </div>
 
         <div className={style.info}>
