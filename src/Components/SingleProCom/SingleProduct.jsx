@@ -2,17 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./SingleProduct.module.css";
 import axios from "axios";
-import { Box, Image, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Img, Spinner, Text } from "@chakra-ui/react";
 import { ProductAbout } from "./ProductAbout";
 import { SliderComponent } from "./SliderComponent";
+import { addtocart, getCart } from "../../Redux/CartReducer/action";
+import { useDispatch } from "react-redux";
+
 
 export const SingleProduct = () => {
+  
+  const [isLoading,setIsloading]=useState(true)
   const { id } = useParams();
   const { category } = useParams();
   const [currentProduct, setcurrentProduct] = useState({});
   const [currentImage1, setcurrentImage1] = useState("");
   const [currentImage2, setcurrentImage2] = useState("");
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImage, setActiveImage] = useState(currentImage1);
 
   const getData = () => {
     axios
@@ -30,10 +35,22 @@ export const SingleProduct = () => {
 
   useEffect(() => {
     getData();
-    console.log(currentProduct);
   }, []);
+  
+  const dispatch=useDispatch()
+  
 
+const handdleSubmit=()=>
+{
+ 
 
+addtocart(
+  {currentProduct,
+    dispatch}
+  ).then(() => {
+    getCart(dispatch);
+  });
+}
 
   return (
     <div className={style.outerdiv}>
@@ -100,10 +117,12 @@ export const SingleProduct = () => {
           </div>
 
           <div className={style.btnDiv}>
-            <div className={style.btn}>ADD TO BAG </div>
-
+           
+{isLoading?           <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
+:           <Button variant={"ghosht"} m="auto" > <Spinner size='xs' /></Button>
+}
             <div>
-              <p> ₹ {currentProduct.price} </p>
+              <p>  </p>
             </div>
           </div>
         </div>
