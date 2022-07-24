@@ -61,11 +61,16 @@ console.log(value);
         getAdress(dispatch);
       });;
     }
+    var x = document.forms["myForm"]["Firstname"]["Lastname"]["City"]["State"]["PIN"]["Phone"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
   };
   let navigate=useNavigate()
   const handdleClick=()=>
   {
-    navigate("/paymentMethod")
+ 
   }
   const toast = useToast();
   return (
@@ -87,7 +92,7 @@ console.log(value);
             <Box mt={"20px"}>
               <FormLabel>Shipping Adress</FormLabel>
 
-              <form onSubmit={haddleSubmit} isInvalid={isError} >
+              <form name="myForm" onSubmit={haddleSubmit} isInvalid={isError} required>
               <Input
                   placeholder="contry"
                   size="lg"
@@ -186,7 +191,7 @@ console.log(value);
                         isClosable: true,
       
                         bg: "blue",
-                        duration: 4000,
+                        duration: 3000,
                         render: () => (
                           <Box borderRadius={"50px"}>
                             <Box
@@ -194,10 +199,12 @@ console.log(value);
                               textAlign={"center"}
                               width={"500px"}
                               p={3}
-                              bg="#3c07ff"
+                          
                             
                             >
-                         Address Added
+                              <Heading>Order Successfull</Heading>
+                       <Image src={"https://assets.materialup.com/uploads/9157d69a-f77a-4dd7-8efa-0dbcf2dca0f5/preview.gif"}/>
+                           
                             </Box>
                             
                           </Box>

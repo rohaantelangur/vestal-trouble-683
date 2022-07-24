@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./SingleProduct.module.css";
 import axios from "axios";
-import { Box, Image, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Img, Spinner, Text } from "@chakra-ui/react";
 import { ProductAbout } from "./ProductAbout";
 import { SliderComponent } from "./SliderComponent";
+import { addtocart, getCart } from "../../Redux/CartReducer/action";
+import { useDispatch } from "react-redux";
+
 
 export const SingleProduct = () => {
+  
+  const [isLoading,setIsloading]=useState(true)
   const { id } = useParams();
   const { category } = useParams();
   const [currentProduct, setcurrentProduct] = useState({});
@@ -21,6 +26,7 @@ export const SingleProduct = () => {
         setcurrentProduct(res.data);
         setcurrentImage1(res.data.images[0].src);
         setcurrentImage2(res.data.images[1].src);
+        setActiveImage(res.data.images[0].src)
       })
       .catch((err) => {
         console.log(err);
@@ -29,15 +35,22 @@ export const SingleProduct = () => {
 
   useEffect(() => {
     getData();
-    console.log(currentProduct);
   }, []);
+  
+  const dispatch=useDispatch()
+  
 
-  // console.log('activeImage:', activeImage)
+const handdleSubmit=()=>
+{
+ 
 
-  const handleImage1 = () => {
-    setActiveImage(currentImage1);
-  };
-
+addtocart(
+  {currentProduct,
+    dispatch}
+  ).then(() => {
+    getCart(dispatch);
+  });
+}
 
   return (
     <div className={style.outerdiv}>
@@ -103,10 +116,12 @@ export const SingleProduct = () => {
           </div>
 
           <div className={style.btnDiv}>
-            <div className={style.btn}>ADD TO BAG </div>
-
+           
+{isLoading?           <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
+:           <Button variant={"ghosht"} m="auto" > <Spinner size='xs' /></Button>
+}
             <div>
-              <p> ₹ {currentProduct.price} </p>
+              <p>  </p>
             </div>
           </div>
         </div>
