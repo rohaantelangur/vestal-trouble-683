@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./SingleProduct.module.css";
 import axios from "axios";
-import { Box, Button, Image, Img, Spinner, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Img, Spinner, Text, useToast } from "@chakra-ui/react";
 import { ProductAbout } from "./ProductAbout";
 import { SliderComponent } from "./SliderComponent";
 import { addtocart, getCart } from "../../Redux/CartReducer/action";
@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 
 
 export const SingleProduct = () => {
-  
+  const toast = useToast()
   const [isLoading,setIsloading]=useState(true)
   const { id } = useParams();
   const { category } = useParams();
@@ -42,7 +42,13 @@ export const SingleProduct = () => {
 
 const handdleSubmit=()=>
 {
- 
+  toast({
+    title: 'Product added to cart',
+   position:"top",
+    status: 'success',
+    duration: 2000,
+    isClosable: true,
+  })
 
 addtocart(
   {currentProduct,
@@ -118,7 +124,7 @@ addtocart(
 
           <div className={style.btnDiv}>
            
-        <Button variant={"ghosht"} m="auto" onClick={handdleSubmit}>Add to Cart ₹ {currentProduct.price}</Button>
+        <Button variant={"ghosht"} m="auto" onClick={handdleSubmit} >Add to Cart ₹ {currentProduct.price}</Button>
          
 
             <div>

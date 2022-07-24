@@ -8,12 +8,23 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { deleteitem, getCart } from "../../Redux/CartReducer/action";
 export const SideCartShow = (props) => {
   const { price, ratings, title, quantity,vendor, id } = props;
-  const { src } = props.images[0];
+
+  const [currentImage1, setcurrentImage1] = useState("");
+
+
+  // const { src } = props.images[0];
+
   const [count, setCount] = useState(quantity);
   const [abovethreeOrder,setAbovethreeOrder]=useState(false)
   const dispatch = useDispatch();
 
+  useEffect(()=>
+  {
+    setcurrentImage1(props.images[0].src)
+    // console.log(props.images[0].src)
+  },[])
 
+  console.log(currentImage1)
   const handdleUpdate = async (count) => {
     await axios
       .patch(`http://localhost:8080/addtocart/${id}`, {
@@ -70,7 +81,7 @@ useEffect(()=>
         
       >
         <Box w={"120px"} h="150px">
-          <Image src={src} />
+          <Image src={currentImage1} />
         </Box>
         <Box width={"180px"}>
           <Box overflow={"hidden"} whiteSpace={"nowrap"}>

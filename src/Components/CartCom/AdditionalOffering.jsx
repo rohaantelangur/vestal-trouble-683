@@ -1,6 +1,6 @@
 import { Box, Button, Heading, HStack, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const AdditionalOffering = ({ totalPrice }) => {
   let navigate = useNavigate();
   return (
@@ -54,9 +54,11 @@ export const AdditionalOffering = ({ totalPrice }) => {
             </Box>
           </Box>
           <Box display={"flex"} justifyContent={"space-between"} gap={"20px"}>
-            <Button variant={"ghost"} textDecoration="underline" mt="1">
+           <Link to="/login">
+           <Button variant={"ghost"} textDecoration="underline" mt="1">
               Log IN
             </Button>
+           </Link> 
             <Button
               mt="1"
               borderRadius={"0px"}

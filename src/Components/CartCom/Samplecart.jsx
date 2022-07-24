@@ -28,7 +28,7 @@ import { BagIcon } from './BagIcon';
 export const Samplecart = () => {
     const navigate = useNavigate();
     const AddtoCart = useSelector((state) => state.Cartreducer.AddtoCart);
-
+console.log(AddtoCart)
     const uniqueIds = [];
 
 const unique = AddtoCart.filter(element => {
@@ -94,7 +94,7 @@ const unique = AddtoCart.filter(element => {
           </Box>
           <Box mt="2">
               {
-                  unique?.map((item)=>
+                  unique.map((item)=>
                   {
                     totalPrice+=item.priceMax
                       return  <SideCartShow key={item.id} {...item} />
