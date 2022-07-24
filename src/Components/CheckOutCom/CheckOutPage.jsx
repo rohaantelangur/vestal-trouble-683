@@ -189,7 +189,7 @@ console.log(value);
                       toast({
                         position: "top",
                         isClosable: true,
-      
+
                         bg: "blue",
                         duration: 3000,
                         render: () => (
@@ -204,11 +204,12 @@ console.log(value);
                             >
                               <Heading>Order Successfull</Heading>
                        <Image src={"https://assets.materialup.com/uploads/9157d69a-f77a-4dd7-8efa-0dbcf2dca0f5/preview.gif"}/>
-                           
+                          
                             </Box>
                             
                           </Box>
                         ),
+                 
                       })
                     )
                   }
